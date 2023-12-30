@@ -1,0 +1,37 @@
+Thu Dec 28 16:48:00 2023       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 545.23.06              Driver Version: 545.23.06    CUDA Version: 12.3     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Tesla V100-SXM2-32GB           On  | 00000000:8A:00.0 Off |                    0 |
+| N/A   32C    P0              41W / 300W |      0MiB / 32768MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+
+Currently Loaded Modules:
+  1) ncarenv/23.10       (S)   5) ucx/1.14.1      9) cdo/2.2.2
+  2) intel/2023.2.1            6) openmpi/4.1.6  10) conda/latest
+  3) ncarcompilers/1.0.0       7) hdf5/1.12.2
+  4) cuda/12.2.1               8) netcdf/4.9.2
+
+  Where:
+   S:  Module is Sticky, requires --force to unload or purge
+
+ 
+
+True
+/glade/work/zilumeng/3D_trans/model/3x4p_1.pkl
+{'dataX.shape': (493, 12, 9, 51, 120)}
+{'lat: -20.0S to 20.0N', 'lev: 5.0m to 150.0m', 'lon: 92.0E to 330.0E'}
+len_data: 473

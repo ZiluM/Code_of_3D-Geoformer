@@ -1,0 +1,7 @@
+0 ============================================================
+Traceback (most recent call last):
+  File "/glade/work/zilumeng/3D_trans/./mul_train/check_error.py", line 16, in <module>
+    pred = np.load(path1)
+  File "/glade/work/zilumeng/conda-envs/earth2mip/lib/python3.10/site-packages/numpy/lib/npyio.py", line 427, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: '../data/noise1/pred_3x4p_1_0.npy'

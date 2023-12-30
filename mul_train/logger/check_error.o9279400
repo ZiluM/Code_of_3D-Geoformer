@@ -1,0 +1,48 @@
+/glade/work/zilumeng/3D_trans/./mul_train/check_error.py:49: RuntimeWarning: More than 20 figures have been opened. Figures created through the pyplot interface (`matplotlib.pyplot.figure`) are retained until explicitly closed and may consume too much memory. (To control this warning, see the rcParam `figure.max_open_warning`). Consider using `matplotlib.pyplot.close()`.
+  fig = plt.figure()
+0 ============================================================
+save to ./data/noise1/pic/3x4p_1_0.png
+1 ============================================================
+save to ./data/noise1/pic/3x4p_1_1.png
+2 ============================================================
+save to ./data/noise1/pic/3x4p_1_2.png
+3 ============================================================
+save to ./data/noise1/pic/3x4p_1_3.png
+4 ============================================================
+save to ./data/noise1/pic/3x4p_1_4.png
+5 ============================================================
+save to ./data/noise1/pic/3x4p_1_5.png
+6 ============================================================
+save to ./data/noise1/pic/3x4p_1_6.png
+7 ============================================================
+save to ./data/noise1/pic/3x4p_1_7.png
+8 ============================================================
+save to ./data/noise1/pic/3x4p_1_8.png
+9 ============================================================
+save to ./data/noise1/pic/3x4p_1_9.png
+10 ============================================================
+save to ./data/noise1/pic/3x4p_1_10.png
+11 ============================================================
+save to ./data/noise1/pic/3x4p_1_11.png
+12 ============================================================
+save to ./data/noise1/pic/3x4p_1_12.png
+13 ============================================================
+save to ./data/noise1/pic/3x4p_1_13.png
+14 ============================================================
+save to ./data/noise1/pic/3x4p_1_14.png
+15 ============================================================
+save to ./data/noise1/pic/3x4p_1_15.png
+16 ============================================================
+save to ./data/noise1/pic/3x4p_1_16.png
+17 ============================================================
+save to ./data/noise1/pic/3x4p_1_17.png
+18 ============================================================
+save to ./data/noise1/pic/3x4p_1_18.png
+19 ============================================================
+save to ./data/noise1/pic/3x4p_1_19.png
+20 ============================================================
+save to ./data/noise1/pic/3x4p_1_20.png
+21 ============================================================
+save to ./data/noise1/pic/3x4p_1_21.png
+22 ============================================================
+save to ./data/noise1/pic/3x4p_1_22.png

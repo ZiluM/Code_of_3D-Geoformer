@@ -1,0 +1,6584 @@
+Fri Dec 22 23:45:33 2023       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 545.23.08              Driver Version: 545.23.08    CUDA Version: 12.3     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Tesla V100-SXM2-32GB           On  | 00000000:8A:00.0 Off |                    0 |
+| N/A   32C    P0              40W / 300W |      0MiB / 32768MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+0 model/Geoformer_beforeTrans.pkl
+1 model/5x5p_1.pkl
+tensor([[ 0.5272,  0.4000,  0.0652,  ..., -1.0223, -0.8545, -0.6438],
+        [ 0.8759,  0.6852,  0.4246,  ..., -0.8079, -0.8339, -0.7778],
+        [ 1.2973,  1.0952,  0.8799,  ..., -0.5502, -0.7480, -0.8422],
+        ...,
+        [-0.5859,  0.0000,  0.0000,  ...,  2.9675,  3.1123,  3.2042],
+        [-0.5605,  0.0000,  0.0000,  ...,  3.1596,  3.2965,  3.3727],
+        [ 0.0000,  0.0000,  0.0000,  ...,  3.3887,  3.5276,  3.6041]],
+       dtype=torch.float64)
+tensor([[-0.5476, -0.3700, -0.4621,  ..., -0.9192, -0.7968, -0.9329],
+        [ 0.1608,  0.1518, -0.1341,  ..., -0.8351, -0.8327, -1.0684],
+        [ 0.7051,  0.5714,  0.1536,  ..., -0.7822, -0.8659, -1.1667],
+        ...,
+        [-0.2350,  0.0000,  0.0000,  ...,  1.0683,  1.2054,  1.1621],
+        [-0.2437,  0.0000,  0.0000,  ...,  1.0284,  1.1523,  1.1470],
+        [ 0.0000,  0.0000,  0.0000,  ...,  1.0051,  1.0824,  1.0626]],
+       dtype=torch.float64)
+tensor([[ 1.2001,  1.6164,  1.6771,  ..., -0.8752, -0.9170, -0.9499],
+        [ 1.4118,  1.8028,  1.8518,  ..., -1.1069, -1.2514, -1.3598],
+        [ 1.5496,  1.9100,  1.9547,  ..., -1.2651, -1.5122, -1.6956],
+        ...,
+        [-0.0368,  0.0000,  0.0000,  ...,  0.6765,  0.7301,  0.7447],
+        [-0.0414,  0.0000,  0.0000,  ...,  0.7486,  0.7732,  0.7576],
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.7944,  0.8022,  0.7524]],
+       dtype=torch.float64)
+tensor([[-2.8752, -1.8352, -1.0547,  ...,  0.0573,  0.2331,  0.4643],
+        [-2.4101, -1.5045, -0.8687,  ..., -0.1520,  0.0431,  0.2653],
+        [-1.8846, -1.1569, -0.6863,  ..., -0.3383, -0.1246,  0.0892],
+        ...,
+        [ 0.1289,  0.0000,  0.0000,  ...,  1.4268,  1.4624,  1.4944],
+        [ 0.2967,  0.0000,  0.0000,  ...,  1.4837,  1.5215,  1.5662],
+        [ 0.0000,  0.0000,  0.0000,  ...,  1.5712,  1.6003,  1.6311]],
+       dtype=torch.float64)
+tensor([[ 0.0143,  0.7523,  1.4808,  ..., -0.2689, -0.3163, -0.2445],
+        [ 0.1406,  0.8502,  1.6190,  ..., -0.3047, -0.3819, -0.3533],
+        [ 0.2487,  0.8885,  1.6439,  ..., -0.3618, -0.4784, -0.4900],
+        ...,
+        [ 0.0502,  0.0000,  0.0000,  ..., -0.1081, -0.0581, -0.0078],
+        [-0.2414,  0.0000,  0.0000,  ..., -0.0188,  0.0247,  0.0865],
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.0416,  0.0626,  0.1390]],
+       dtype=torch.float64)
+tensor([[-1.5202, -0.8117, -0.2184,  ..., -0.0833, -0.0262,  0.1231],
+        [-1.5886, -0.8985, -0.2944,  ..., -0.0834, -0.0465,  0.0737],
+        [-1.7553, -1.0933, -0.4712,  ..., -0.0865, -0.0802,  0.0281],
+        ...,
+        [ 0.4696,  0.0000,  0.0000,  ..., -0.8772, -0.6768, -0.5040],
+        [-0.7811,  0.0000,  0.0000,  ..., -0.8256, -0.6900, -0.5461],
+        [ 0.0000,  0.0000,  0.0000,  ..., -0.7976, -0.7108, -0.5978]],
+       dtype=torch.float64)
+tensor([[ 1.1883,  1.2816,  1.2381,  ..., -0.0372,  0.0486,  0.1958],
+        [ 1.2242,  1.2962,  1.2258,  ...,  0.0824,  0.1412,  0.2816],
+        [ 1.0526,  1.0623,  0.9319,  ...,  0.2341,  0.2635,  0.4013],
+        ...,
+        [-0.1932,  0.0000,  0.0000,  ...,  0.2315,  0.2788,  0.3230],
+        [-0.9527,  0.0000,  0.0000,  ...,  0.2187,  0.2802,  0.3025],
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.1973,  0.2771,  0.2777]],
+       dtype=torch.float64)
+tensor([[ 0.8671,  1.2341,  1.3302,  ..., -0.4523, -0.3824, -0.2506],
+        [ 1.1043,  1.2941,  1.2267,  ..., -0.3265, -0.3029, -0.1724],
+        [ 1.3148,  1.3306,  1.0955,  ..., -0.1051, -0.1058,  0.0167],
+        ...,
+        [ 1.6156,  0.0000,  0.0000,  ..., -0.0301,  0.1655,  0.2969],
+        [ 1.2750,  0.0000,  0.0000,  ..., -0.0350,  0.1392,  0.2670],
+        [ 0.0000,  0.0000,  0.0000,  ..., -0.0226,  0.1214,  0.2346]],
+       dtype=torch.float64)
+tensor([[-2.6577, -1.5818, -0.8361,  ...,  0.1983,  0.5682,  0.9110],
+        [-2.4543, -1.4772, -0.7822,  ...,  0.0628,  0.5425,  0.9703],
+        [-2.1756, -1.3942, -0.7868,  ...,  0.0433,  0.5940,  1.0819],
+        ...,
+        [-0.2154,  0.0000,  0.0000,  ..., -0.9678, -0.6508, -0.3679],
+        [-0.4930,  0.0000,  0.0000,  ..., -0.8365, -0.5324, -0.3255],
+        [ 0.0000,  0.0000,  0.0000,  ..., -0.7611, -0.4753, -0.3535]],
+       dtype=torch.float64)
+tensor([[-1.9941, -1.4368, -1.1626,  ...,  0.1566,  0.1043,  0.1187],
+        [-2.3311, -1.7337, -1.3788,  ...,  0.2074,  0.1861,  0.2645],
+        [-2.6761, -2.0374, -1.5848,  ...,  0.2215,  0.2489,  0.4077],
+        ...,
+        [-0.5955,  0.0000,  0.0000,  ...,  0.0141,  0.2695,  0.5129],
+        [-0.6834,  0.0000,  0.0000,  ...,  0.1134,  0.3163,  0.5178],
+        [ 0.0000,  0.0000,  0.0000,  ...,  0.2560,  0.3730,  0.4930]],
+       dtype=torch.float64)
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+3
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+4
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+5
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+6
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+7
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+8
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+9
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+10
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+11
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+12
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+13
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+14
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+15
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+16
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+17
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+18
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+19
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+20
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+21
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+22
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+23
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+24
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+25
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+26
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+27
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+28
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+29
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+30
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+31
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+32
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+33
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+34
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+35
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+36
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+37
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+38
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+39
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+40
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+41
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+42
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+43
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+44
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+45
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+46
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+47
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+48
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+49
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+50
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+51
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+52
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+53
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+54
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+55
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+56
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+57
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+58
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+59
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+60
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+61
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+62
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+63
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+64
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+65
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+66
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+67
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+68
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+69
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+70
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+71
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+72
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+73
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+74
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+75
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+76
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+77
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+78
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+79
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+80
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+81
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+82
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+83
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+84
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+85
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+86
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+87
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+88
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+89
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+90
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+91
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+92
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+93
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+94
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+95
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+96
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+97
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+98
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+99
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+100
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+101
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+102
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+103
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+104
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+105
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+106
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+107
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+108
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+109
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+110
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+111
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+112
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+113
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+114
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+115
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+116
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+117
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+118
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+119
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+120
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+121
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+122
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+123
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+124
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+125
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+126
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+127
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+128
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+129
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+130
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+131
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+132
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+133
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+134
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+135
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+136
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+137
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+138
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+139
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+140
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+141
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+142
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+143
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+144
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+145
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+146
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+147
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+148
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+149
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+150
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+151
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+152
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+153
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+154
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+155
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+156
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+157
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+158
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+159
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+160
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+161
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+162
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+163
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+164
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+165
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+166
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+167
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+168
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+169
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+170
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+171
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+172
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+173
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+174
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+175
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+176
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+177
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+178
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+179
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+180
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+181
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+182
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+183
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+184
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+185
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+186
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+187
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+188
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+189
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+190
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+191
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+192
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+193
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+194
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+195
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+196
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+197
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+198
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+199
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+200
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+201
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+202
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+203
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+204
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+205
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+206
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+207
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+208
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+209
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+210
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+211
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+212
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+213
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+214
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+215
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+216
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+217
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+218
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+219
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+220
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+221
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+222
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+223
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+224
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+225
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+226
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+227
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+228
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+229
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+230
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+231
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+232
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+233
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+234
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+235
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+236
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+237
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+238
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+239
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+240
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+241
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+242
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+243
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+244
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+245
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+246
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+247
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+248
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+249
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+250
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+251
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+252
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+253
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+254
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+255
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+256
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+257
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+258
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+259
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+260
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+261
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+262
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+263
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+264
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+265
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+266
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+267
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+268
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+269
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+270
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+271
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+272
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+273
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+274
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+275
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+276
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+277
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+278
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+279
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+280
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+281
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+282
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+283
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+284
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+285
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+286
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+287
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+288
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+289
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+290
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+291
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+292
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+293
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+294
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+295
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+296
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+297
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+298
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+299
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+300
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+301
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+302
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+303
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+304
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+305
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+306
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+307
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+308
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+309
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+310
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+311
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+312
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+313
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+314
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+315
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+316
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+317
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+318
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+319
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+320
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+321
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+322
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+323
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+324
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+325
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+326
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+327
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+328
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+329
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+330
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+331
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+332
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+333
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+334
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+335
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+336
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+337
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+338
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+339
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+340
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+341
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+342
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+343
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+344
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+345
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+346
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+347
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+348
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+349
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+350
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+351
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+352
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+353
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+354
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+355
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+356
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+357
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+358
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+359
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+360
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+361
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+362
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+363
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+364
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+365
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+366
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+367
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+368
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+369
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+370
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+371
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+372
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+373
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+374
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+375
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+376
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+377
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+378
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+379
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+380
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+381
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+382
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+383
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+384
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+385
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+386
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+387
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+388
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+389
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+390
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+391
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+392
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+393
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+394
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+395
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+396
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+397
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+398
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+399
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+400
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+401
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+402
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+403
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+404
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+405
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+406
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+407
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+408
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+409
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+410
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+411
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+412
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+413
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+414
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+415
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+416
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+417
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+418
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+419
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+420
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+421
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+422
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+423
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+424
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+425
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+426
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+427
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+428
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+429
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+430
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+431
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+432
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+433
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+434
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+435
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+436
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+437
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+438
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+439
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+440
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+441
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+442
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+443
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+444
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+445
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+446
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+447
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+448
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+449
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+450
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+451
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+452
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+453
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+454
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+455
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+456
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+457
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+458
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+459
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+460
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+461
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+462
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+463
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+464
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+465
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+466
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+467
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+468
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+469
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+470
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+471
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+472
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+473
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+474
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+475
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+476
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+477
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+478
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+479
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+480
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+481
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+482
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+483
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+484
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+485
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+486
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+487
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+488
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+489
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+490
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+491
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+492
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+493
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+494
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+495
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+496
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+497
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+498
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+499
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+500
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+501
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+502
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+503
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+504
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+505
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+506
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+507
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+508
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+509
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+510
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+511
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+512
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+513
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+514
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+515
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+516
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+517
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+518
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+519
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+520
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+521
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+522
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+523
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+524
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+525
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+526
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+527
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+528
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+529
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+530
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+531
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+532
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+533
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+534
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+535
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+536
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+537
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+538
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+539
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+540
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+541
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+542
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+543
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+544
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+545
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+546
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+547
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+548
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+549
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+550
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+551
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+552
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+553
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+554
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+555
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+556
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+557
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+558
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+559
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+560
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+561
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+562
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+563
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+564
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+565
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+566
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+567
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+568
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+569
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+570
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+571
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+572
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+573
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+574
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+575
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+576
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+577
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+578
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+579
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+580
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+581
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+582
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+583
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+584
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+585
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+586
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+587
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+588
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+589
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+590
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+591
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+592
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+593
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+594
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+595
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+596
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+597
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+598
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+599
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+600
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+601
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+602
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+603
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+604
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+605
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+606
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+607
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+608
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+609
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+610
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+611
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+612
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+613
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+614
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+615
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+616
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+617
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+618
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+619
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+620
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+621
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+622
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+623
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+624
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+625
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+626
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+627
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+628
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+629
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+630
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+631
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+632
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+633
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+634
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+635
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+636
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+637
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+638
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+639
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+640
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+641
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+642
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+643
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+644
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+645
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+646
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+647
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+648
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+649
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+650
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+651
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+652
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+653
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+654
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+655
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+656
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+657
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+658
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+659
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+660
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+661
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+662
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+663
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+664
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+665
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+666
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+667
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+668
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+669
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+670
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+671
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+672
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+673
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+674
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+675
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+676
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+677
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+678
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+679
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+680
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+681
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+682
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+683
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+684
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+685
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+686
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+687
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+688
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+689
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+690
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+691
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+692
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+693
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+694
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+695
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+696
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+697
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+698
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+699
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+700
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+701
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+702
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+703
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+704
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+705
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+706
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+707
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+708
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+709
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+710
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+711
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+712
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+713
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+714
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+715
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+716
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+717
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+718
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+719
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+720
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+721
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+722
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+723
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+724
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+725
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+726
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+727
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+728
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+729
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+730
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+731
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+732
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+733
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+734
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+735
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+736
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+737
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+738
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+739
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+740
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+741
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+742
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+743
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+744
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+745
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+746
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+747
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+748
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+749
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+750
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+751
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+752
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+753
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+754
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+755
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+756
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+757
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+758
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+759
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+760
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+761
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+762
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+763
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+764
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+765
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+766
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+767
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+768
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+769
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+770
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+771
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+772
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+773
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+774
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+775
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+776
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+777
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+778
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+779
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+780
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+781
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+782
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+783
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+784
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+785
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+786
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+787
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+788
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+789
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+790
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+791
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+792
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+793
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+794
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+795
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+796
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+797
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+798
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+799
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+800
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+801
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+802
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+803
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+804
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+805
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+806
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+807
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+808
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+809
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+810
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+811
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+812
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+813
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+814
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+815
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+816
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+817
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+818
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+819
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+820
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+821
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+822
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+823
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+824
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+825
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+826
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+827
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+828
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+829
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+830
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+831
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+832
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+833
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+834
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+835
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+836
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+837
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+838
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+839
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+840
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+841
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+842
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+843
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+844
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+845
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+846
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+847
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+848
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+849
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+850
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+851
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+852
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+853
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+854
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+855
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+856
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+857
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+858
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+859
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+860
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+861
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+862
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+863
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+864
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+865
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+866
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+867
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+868
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+869
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+870
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+871
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+872
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+873
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+874
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+875
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+876
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+877
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+878
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+879
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+880
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+881
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+882
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+883
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+884
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+885
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+886
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+887
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+888
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+889
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+890
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+891
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+892
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+893
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+894
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+895
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+896
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+897
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+898
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+899
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+900
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+901
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+902
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+903
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+904
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+905
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+906
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+907
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+908
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+909
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+910
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+911
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+912
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+913
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+914
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+915
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+916
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+917
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+918
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+919
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+920
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+921
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+922
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+923
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+924
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+925
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+926
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+927
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+928
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+929
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+930
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+931
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+932
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+933
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+934
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+935
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+936
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+937
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+938
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+939
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+940
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+941
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+942
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+943
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+944
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+945
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+946
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+947
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+948
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+949
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+950
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+951
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+952
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+953
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+954
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+955
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+956
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+957
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+958
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+959
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+960
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+961
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+962
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+963
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+964
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+965
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+966
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+967
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+968
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+969
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+970
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+971
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+972
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+973
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+974
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+975
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+976
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+977
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+978
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+979
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+980
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+981
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+982
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+983
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+984
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+985
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+986
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+987
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+988
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+989
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+990
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+991
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+992
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+993
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+994
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+995
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+996
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+997
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+998
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+999
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1000
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1001
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1002
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1003
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1004
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1005
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1006
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1007
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1008
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1009
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1010
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1011
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1012
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1013
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1014
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1015
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1016
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1017
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1018
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1019
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1020
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1021
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1022
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1023
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1024
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1025
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1026
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1027
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1028
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1029
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1030
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1031
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1032
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1033
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1034
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1035
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1036
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1037
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1038
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1039
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1040
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1041
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1042
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1043
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1044
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1045
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1046
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1047
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1048
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1049
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1050
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1051
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1052
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1053
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1054
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1055
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1056
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1057
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1058
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1059
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1060
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1061
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1062
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1063
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1064
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1065
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1066
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1067
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1068
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1069
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1070
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1071
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1072
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1073
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1074
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1075
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1076
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1077
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1078
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1079
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1080
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1081
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1082
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1083
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1084
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1085
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1086
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1087
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1088
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1089
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1090
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1091
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1092
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1093
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1094
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1095
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1096
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1097
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1098
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1099
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1100
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1101
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1102
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1103
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1104
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1105
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1106
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1107
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1108
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1109
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1110
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1111
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1112
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1113
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1114
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1115
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1116
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1117
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1118
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1119
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1120
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1121
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1122
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1123
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1124
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1125
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1126
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1127
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1128
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1129
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1130
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1131
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1132
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1133
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1134
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1135
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1136
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1137
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1138
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1139
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1140
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1141
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1142
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1143
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1144
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1145
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1146
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1147
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1148
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1149
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1150
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1151
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1152
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1153
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1154
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1155
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1156
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1157
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1158
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1159
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1160
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1161
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1162
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1163
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1164
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1165
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1166
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1167
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1168
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1169
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1170
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1171
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1172
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1173
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1174
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1175
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1176
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1177
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1178
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1179
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1180
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1181
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1182
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1183
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1184
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1185
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1186
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1187
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1188
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1189
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1190
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1191
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1192
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1193
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1194
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1195
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1196
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1197
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1198
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1199
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1200
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1201
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1202
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1203
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1204
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1205
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1206
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1207
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1208
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1209
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1210
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1211
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1212
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1213
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1214
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1215
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1216
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1217
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1218
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1219
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1220
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1221
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1222
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1223
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1224
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1225
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1226
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1227
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1228
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1229
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1230
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1231
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1232
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1233
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1234
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1235
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1236
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1237
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1238
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1239
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1240
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1241
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1242
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1243
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1244
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1245
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1246
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1247
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1248
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1249
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1250
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1251
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1252
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1253
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1254
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1255
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1256
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1257
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1258
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1259
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1260
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1261
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1262
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1263
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1264
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1265
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1266
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1267
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1268
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1269
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1270
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1271
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1272
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1273
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1274
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1275
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1276
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1277
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1278
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1279
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1280
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1281
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1282
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1283
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1284
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1285
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1286
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1287
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1288
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1289
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1290
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1291
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1292
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1293
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1294
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1295
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1296
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1297
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1298
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1299
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1300
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1301
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1302
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1303
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1304
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1305
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1306
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1307
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1308
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1309
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1310
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1311
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1312
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1313
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1314
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1315
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1316
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1317
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1318
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1319
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1320
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1321
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1322
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1323
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1324
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1325
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1326
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1327
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1328
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1329
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1330
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1331
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1332
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1333
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1334
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1335
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1336
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1337
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1338
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1339
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1340
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1341
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1342
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1343
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1344
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1345
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1346
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1347
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1348
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1349
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1350
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1351
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1352
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1353
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1354
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1355
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1356
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1357
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1358
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1359
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1360
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1361
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1362
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1363
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1364
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1365
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1366
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1367
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1368
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1369
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1370
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1371
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1372
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1373
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1374
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1375
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1376
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1377
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1378
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1379
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1380
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1381
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1382
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1383
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1384
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1385
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1386
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1387
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1388
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1389
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1390
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1391
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1392
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1393
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1394
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1395
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1396
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1397
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1398
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1399
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1400
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1401
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1402
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1403
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1404
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1405
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1406
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1407
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1408
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1409
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1410
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1411
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1412
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1413
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1414
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1415
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1416
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1417
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1418
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1419
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1420
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1421
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1422
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1423
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1424
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1425
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1426
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1427
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1428
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1429
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1430
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1431
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1432
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1433
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1434
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1435
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1436
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1437
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1438
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1439
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1440
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1441
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1442
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1443
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1444
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1445
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1446
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1447
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1448
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1449
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1450
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1451
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1452
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1453
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1454
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1455
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1456
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1457
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1458
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1459
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1460
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1461
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1462
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1463
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1464
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1465
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1466
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1467
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1468
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1469
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1470
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1471
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1472
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1473
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1474
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1475
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1476
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1477
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1478
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1479
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1480
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1481
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1482
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1483
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1484
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1485
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1486
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1487
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1488
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1489
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1490
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1491
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1492
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1493
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1494
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1495
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1496
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1497
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1498
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1499
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1500
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1501
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1502
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1503
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1504
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1505
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1506
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1507
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1508
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1509
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1510
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1511
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1512
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1513
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1514
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1515
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1516
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1517
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1518
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1519
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1520
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1521
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1522
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1523
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1524
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1525
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1526
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1527
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1528
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1529
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1530
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1531
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1532
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1533
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1534
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1535
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1536
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1537
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1538
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1539
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1540
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1541
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1542
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1543
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1544
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1545
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1546
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1547
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1548
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1549
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1550
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1551
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1552
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1553
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1554
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1555
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1556
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1557
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1558
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1559
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1560
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1561
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1562
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1563
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1564
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1565
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1566
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1567
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1568
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1569
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1570
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1571
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1572
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1573
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1574
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1575
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1576
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1577
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1578
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1579
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1580
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1581
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1582
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1583
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1584
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1585
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1586
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1587
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1588
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1589
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1590
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1591
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1592
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1593
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1594
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1595
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1596
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1597
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1598
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1599
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1600
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1601
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1602
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1603
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1604
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1605
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1606
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1607
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1608
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1609
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1610
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1611
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1612
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1613
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1614
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1615
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1616
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1617
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1618
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1619
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1620
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1621
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1622
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1623
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1624
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1625
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1626
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1627
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1628
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1629
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1630
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1631
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1632
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1633
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1634
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1635
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1636
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1637
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1638
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1639
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1640
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1641
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1642
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1643
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1644
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1645
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1646
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1647
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1648
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1649
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1650
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1651
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1652
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1653
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1654
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1655
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1656
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1657
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1658
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1659
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1660
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1661
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1662
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1663
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1664
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1665
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1666
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1667
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1668
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1669
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1670
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1671
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1672
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1673
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1674
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1675
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1676
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1677
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1678
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1679
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1680
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1681
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1682
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1683
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1684
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1685
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1686
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1687
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1688
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1689
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1690
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1691
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1692
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1693
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1694
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1695
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1696
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1697
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1698
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1699
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1700
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1701
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1702
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1703
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1704
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1705
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1706
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1707
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1708
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1709
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1710
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1711
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1712
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1713
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1714
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1715
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1716
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1717
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1718
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1719
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1720
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1721
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1722
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1723
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1724
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1725
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1726
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1727
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1728
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1729
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1730
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1731
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1732
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1733
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1734
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1735
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1736
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1737
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1738
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1739
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1740
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1741
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1742
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1743
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1744
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1745
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1746
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1747
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1748
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1749
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1750
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1751
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1752
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1753
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1754
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1755
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1756
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1757
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1758
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1759
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1760
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1761
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1762
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1763
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1764
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1765
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1766
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1767
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1768
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1769
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1770
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1771
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1772
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1773
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1774
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1775
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1776
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1777
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1778
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1779
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1780
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1781
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1782
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1783
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1784
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1785
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1786
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1787
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1788
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1789
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1790
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1791
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1792
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1793
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1794
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1795
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1796
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1797
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1798
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1799
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1800
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1801
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1802
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1803
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1804
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1805
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1806
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1807
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1808
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1809
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1810
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1811
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1812
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1813
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1814
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1815
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1816
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1817
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1818
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1819
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1820
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1821
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1822
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1823
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1824
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1825
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1826
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1827
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1828
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1829
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1830
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1831
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1832
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1833
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1834
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1835
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1836
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1837
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1838
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1839
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1840
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1841
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1842
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1843
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1844
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1845
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1846
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1847
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1848
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1849
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1850
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1851
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1852
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1853
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1854
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1855
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1856
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1857
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1858
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1859
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1860
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1861
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1862
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1863
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1864
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1865
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1866
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1867
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1868
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1869
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1870
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1871
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1872
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1873
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1874
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1875
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1876
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1877
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1878
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1879
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1880
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1881
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1882
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1883
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1884
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1885
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1886
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1887
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1888
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1889
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1890
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1891
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1892
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1893
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1894
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1895
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1896
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1897
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1898
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1899
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1900
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1901
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1902
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1903
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1904
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1905
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1906
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1907
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1908
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1909
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1910
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1911
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1912
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1913
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1914
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1915
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1916
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1917
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1918
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1919
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1920
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1921
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1922
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1923
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1924
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1925
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1926
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1927
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1928
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1929
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1930
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1931
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1932
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1933
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1934
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1935
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1936
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1937
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1938
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1939
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1940
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1941
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1942
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1943
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1944
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1945
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1946
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1947
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1948
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1949
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1950
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1951
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1952
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1953
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1954
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1955
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1956
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1957
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1958
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1959
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1960
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1961
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1962
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1963
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1964
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1965
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1966
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1967
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1968
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1969
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1970
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1971
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1972
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1973
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1974
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1975
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1976
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1977
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1978
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1979
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1980
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1981
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1982
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1983
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1984
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1985
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1986
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1987
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1988
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1989
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1990
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1991
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1992
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1993
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1994
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1995
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1996
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1997
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+1998
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+1999
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2000
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2001
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2002
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2003
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2004
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2005
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2006
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2007
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2008
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2009
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2010
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2011
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2012
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2013
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2014
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2015
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2016
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2017
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2018
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2019
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2020
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2021
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2022
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2023
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2024
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2025
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2026
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2027
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2028
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2029
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2030
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2031
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2032
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2033
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2034
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2035
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2036
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2037
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2038
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2039
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2040
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2041
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2042
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2043
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2044
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2045
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2046
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2047
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2048
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2049
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2050
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2051
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2052
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2053
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2054
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2055
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2056
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2057
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2058
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2059
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2060
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2061
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2062
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2063
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2064
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2065
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2066
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2067
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2068
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2069
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2070
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2071
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2072
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2073
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2074
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2075
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2076
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2077
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2078
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2079
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2080
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2081
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2082
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2083
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2084
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2085
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2086
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2087
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2088
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2089
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2090
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2091
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2092
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2093
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2094
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2095
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2096
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2097
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2098
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2099
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2100
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2101
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2102
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2103
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2104
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2105
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2106
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2107
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2108
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2109
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2110
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2111
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2112
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2113
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2114
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2115
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2116
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2117
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2118
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2119
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2120
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2121
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2122
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2123
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2124
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2125
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2126
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2127
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2128
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2129
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2130
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2131
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2132
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2133
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2134
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2135
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2136
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2137
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2138
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2139
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2140
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2141
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2142
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2143
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2144
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2145
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2146
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2147
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2148
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2149
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2150
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2151
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2152
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2153
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2154
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2155
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2156
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2157
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2158
+model_idx: 0
+torch.Size([1, 12, 9, 51, 120])
+2159
+model_idx: 1
+torch.Size([1, 12, 9, 51, 120])
+2160
+(2160, 1, 1, 9, 51, 120)
+======save======

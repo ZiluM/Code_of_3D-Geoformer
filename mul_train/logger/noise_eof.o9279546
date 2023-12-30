@@ -1,0 +1,6 @@
+2023-12-28 18:06:22,420 - INFO - lead_time:0============================================================
+2023-12-28 18:06:22,422 - INFO - model_index:0====================
+Traceback (most recent call last):
+  File "/glade/work/zilumeng/3D_trans/./mul_train/noise_eof.py", line 46, in <module>
+    logger.info("noise.shape:" + str(noise.shape))
+NameError: name 'noise' is not defined

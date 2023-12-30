@@ -1,0 +1,1183 @@
+Thu Dec 21 16:50:32 2023       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 545.23.08              Driver Version: 545.23.08    CUDA Version: 12.3     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  | 00000000:C1:00.0 Off |                    0 |
+| N/A   29C    P0              62W / 500W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+{'model_name': '6x5p.pkl', 'device': device(type='cuda', index=0), 'batch_size_train': 8, 'batch_size_eval': 10, 'num_epochs': 40, 'TFnum_epochs': 20, 'TFlr': 1.5e-05, 'early_stopping': True, 'patience': 4, 'warmup': 2000, 'adr_pretr': './data/CMIP6_separate_model_up150m_tauxy_Nor_1850_2014_kb.nc', 'interval': 4, 'TraindataProportion': 0.9, 'all_group': 13000, 'adr_eval': './data/SODA_ORAS_group_temp_tauxy_before1979_kb.nc', 'needtauxy': True, 'input_channal': 7, 'output_channal': 7, 'input_length': 12, 'output_length': 20, 'lev_range': (1, 8), 'lon_range': (45, 165), 'lat_range': (0, 51), 'lon_nino_relative': (49, 75), 'lat_nino_relative': (15, 36), 'patch_size': (6, 5), 'H0': 8, 'W0': 24, 'emb_spatial_size': 192, 'model_savepath': './model/', 'seeds': 1, 'd_size': 256, 'nheads': 4, 'dim_feedforward': 512, 'dropout': 0.2, 'num_encoder_layers': 4, 'num_decoder_layers': 4}
+2023-12-21 16:50:36,763 - INFO - {'model_name': '6x5p.pkl', 'device': device(type='cuda', index=0), 'batch_size_train': 8, 'batch_size_eval': 10, 'num_epochs': 40, 'TFnum_epochs': 20, 'TFlr': 1.5e-05, 'early_stopping': True, 'patience': 4, 'warmup': 2000, 'adr_pretr': './data/CMIP6_separate_model_up150m_tauxy_Nor_1850_2014_kb.nc', 'interval': 4, 'TraindataProportion': 0.9, 'all_group': 13000, 'adr_eval': './data/SODA_ORAS_group_temp_tauxy_before1979_kb.nc', 'needtauxy': True, 'input_channal': 7, 'output_channal': 7, 'input_length': 12, 'output_length': 20, 'lev_range': (1, 8), 'lon_range': (45, 165), 'lat_range': (0, 51), 'lon_nino_relative': (49, 75), 'lat_nino_relative': (15, 36), 'patch_size': (6, 5), 'H0': 8, 'W0': 24, 'emb_spatial_size': 192, 'model_savepath': './model/', 'seeds': 1, 'd_size': 256, 'nheads': 4, 'dim_feedforward': 512, 'dropout': 0.2, 'num_encoder_layers': 4, 'num_decoder_layers': 4}
+
+loading pre-train dataset...
+2023-12-21 16:50:36,763 - INFO - loading pre-train dataset...
+loading tauxy...
+{'lon: 92.0E to 330.0E', 'lat: -20.0S to 20.0N', 'temp lev: 5.0m to 150.0m'}
+
+loading evaluation dataset...
+2023-12-21 16:52:59,861 - INFO - loading evaluation dataset...
+loading tauxy...
+loading tauxy...
+Random sampling...
+End of sampling...
+{'lev: 5.0m to 150.0m', 'lon: 92.0E to 330.0E', 'lat: -20.0S to 20.0N'}
+================================================================================
+
+-->epoch: 0
+2023-12-21 16:54:27,227 - INFO - ================================================================================
+2023-12-21 16:54:27,253 - INFO - 
+-->epoch: 0
+
+-->batch:0 loss_var:231.40, loss_nino:41.18, score:-95.406
+2023-12-21 16:54:27,816 - INFO - 
+-->batch:0 loss_var:231.40, loss_nino:41.18, score:-95.406
+
+-->batch:100 loss_var:158.45, loss_nino:14.04, score:55.278
+2023-12-21 16:54:49,880 - INFO - 
+-->batch:100 loss_var:158.45, loss_nino:14.04, score:55.278
+
+-->batch:200 loss_var:139.61, loss_nino:10.40, score:62.489
+2023-12-21 16:55:11,963 - INFO - 
+-->batch:200 loss_var:139.61, loss_nino:10.40, score:62.489
+
+-->batch:300 loss_var:128.98, loss_nino:8.97, score:64.889
+2023-12-21 16:55:34,075 - INFO - 
+-->batch:300 loss_var:128.98, loss_nino:8.97, score:64.889
+
+-->batch:400 loss_var:124.30, loss_nino:7.59, score:64.868
+2023-12-21 16:55:56,174 - INFO - 
+-->batch:400 loss_var:124.30, loss_nino:7.59, score:64.868
+
+-->batch:500 loss_var:125.85, loss_nino:7.72, score:63.643
+2023-12-21 16:56:18,278 - INFO - 
+-->batch:500 loss_var:125.85, loss_nino:7.72, score:63.643
+
+-->batch:600 loss_var:125.42, loss_nino:10.73, score:60.719
+2023-12-21 16:56:40,370 - INFO - 
+-->batch:600 loss_var:125.42, loss_nino:10.73, score:60.719
+
+-->batch:700 loss_var:128.59, loss_nino:9.20, score:61.895
+2023-12-21 16:57:02,470 - INFO - 
+-->batch:700 loss_var:128.59, loss_nino:9.20, score:61.895
+
+-->batch:800 loss_var:129.65, loss_nino:8.97, score:65.187
+2023-12-21 16:57:24,569 - INFO - 
+-->batch:800 loss_var:129.65, loss_nino:8.97, score:65.187
+
+-->batch:900 loss_var:121.60, loss_nino:7.64, score:63.107
+2023-12-21 16:57:46,664 - INFO - 
+-->batch:900 loss_var:121.60, loss_nino:7.64, score:63.107
+
+-->batch:1000 loss_var:125.87, loss_nino:8.53, score:65.508
+2023-12-21 16:58:08,771 - INFO - 
+-->batch:1000 loss_var:125.87, loss_nino:8.53, score:65.508
+
+-->batch:1100 loss_var:116.04, loss_nino:7.31, score:66.222
+2023-12-21 16:58:30,889 - INFO - 
+-->batch:1100 loss_var:116.04, loss_nino:7.31, score:66.222
+
+-->batch:1200 loss_var:122.32, loss_nino:9.24, score:64.717
+2023-12-21 16:58:53,037 - INFO - 
+-->batch:1200 loss_var:122.32, loss_nino:9.24, score:64.717
+
+-->batch:1300 loss_var:112.58, loss_nino:7.63, score:63.456
+2023-12-21 16:59:15,179 - INFO - 
+-->batch:1300 loss_var:112.58, loss_nino:7.63, score:63.456
+
+-->batch:1400 loss_var:124.27, loss_nino:8.37, score:64.569
+2023-12-21 16:59:37,319 - INFO - 
+-->batch:1400 loss_var:124.27, loss_nino:8.37, score:64.569
+
+-->batch:1500 loss_var:117.46, loss_nino:6.91, score:63.502
+2023-12-21 16:59:59,458 - INFO - 
+-->batch:1500 loss_var:117.46, loss_nino:6.91, score:63.502
+
+-->batch:1600 loss_var:114.52, loss_nino:8.27, score:62.426
+2023-12-21 17:00:21,608 - INFO - 
+-->batch:1600 loss_var:114.52, loss_nino:8.27, score:62.426
+
+-->epoch0 end... 
+loss_var:184.082 
+loss_nino:21.171 
+loss_com:205.253 
+score: -10.022
+2023-12-21 17:00:31,829 - INFO - 
+-->epoch0 end... 
+loss_var:184.082 
+loss_nino:21.171 
+loss_com:205.253 
+score: -10.022
+
+sc is increase from -inf to -10.022   
+saving model...
+
+2023-12-21 17:00:31,829 - INFO - 
+sc is increase from -inf to -10.022   
+saving model...
+
+================================================================================
+
+-->epoch: 1
+2023-12-21 17:00:31,946 - INFO - ================================================================================
+2023-12-21 17:00:31,946 - INFO - 
+-->epoch: 1
+
+-->batch:0 loss_var:115.91, loss_nino:6.43, score:65.461
+2023-12-21 17:00:32,189 - INFO - 
+-->batch:0 loss_var:115.91, loss_nino:6.43, score:65.461
+
+-->batch:100 loss_var:130.12, loss_nino:9.71, score:63.346
+2023-12-21 17:00:54,341 - INFO - 
+-->batch:100 loss_var:130.12, loss_nino:9.71, score:63.346
+
+-->batch:200 loss_var:115.45, loss_nino:7.31, score:67.111
+2023-12-21 17:01:16,488 - INFO - 
+-->batch:200 loss_var:115.45, loss_nino:7.31, score:67.111
+
+-->batch:300 loss_var:121.28, loss_nino:9.04, score:62.338
+2023-12-21 17:01:38,606 - INFO - 
+-->batch:300 loss_var:121.28, loss_nino:9.04, score:62.338
+
+-->batch:400 loss_var:118.10, loss_nino:7.47, score:62.587
+2023-12-21 17:02:00,722 - INFO - 
+-->batch:400 loss_var:118.10, loss_nino:7.47, score:62.587
+
+-->batch:500 loss_var:122.72, loss_nino:8.69, score:63.920
+2023-12-21 17:02:22,866 - INFO - 
+-->batch:500 loss_var:122.72, loss_nino:8.69, score:63.920
+
+-->batch:600 loss_var:115.95, loss_nino:10.36, score:61.517
+2023-12-21 17:02:44,999 - INFO - 
+-->batch:600 loss_var:115.95, loss_nino:10.36, score:61.517
+
+-->batch:700 loss_var:120.46, loss_nino:7.17, score:65.038
+2023-12-21 17:03:07,139 - INFO - 
+-->batch:700 loss_var:120.46, loss_nino:7.17, score:65.038
+
+-->batch:800 loss_var:119.60, loss_nino:8.37, score:62.503
+2023-12-21 17:03:29,281 - INFO - 
+-->batch:800 loss_var:119.60, loss_nino:8.37, score:62.503
+
+-->batch:900 loss_var:124.49, loss_nino:8.81, score:63.934
+2023-12-21 17:03:51,424 - INFO - 
+-->batch:900 loss_var:124.49, loss_nino:8.81, score:63.934
+
+-->batch:1000 loss_var:122.27, loss_nino:11.37, score:61.676
+2023-12-21 17:04:13,565 - INFO - 
+-->batch:1000 loss_var:122.27, loss_nino:11.37, score:61.676
+
+-->batch:1100 loss_var:124.22, loss_nino:9.35, score:57.565
+2023-12-21 17:04:35,680 - INFO - 
+-->batch:1100 loss_var:124.22, loss_nino:9.35, score:57.565
+
+-->batch:1200 loss_var:116.21, loss_nino:10.34, score:63.167
+2023-12-21 17:04:57,818 - INFO - 
+-->batch:1200 loss_var:116.21, loss_nino:10.34, score:63.167
+
+-->batch:1300 loss_var:126.09, loss_nino:10.38, score:59.843
+2023-12-21 17:05:19,976 - INFO - 
+-->batch:1300 loss_var:126.09, loss_nino:10.38, score:59.843
+
+-->batch:1400 loss_var:123.88, loss_nino:8.81, score:64.538
+2023-12-21 17:05:42,113 - INFO - 
+-->batch:1400 loss_var:123.88, loss_nino:8.81, score:64.538
+
+-->batch:1500 loss_var:119.65, loss_nino:8.45, score:64.398
+2023-12-21 17:06:04,257 - INFO - 
+-->batch:1500 loss_var:119.65, loss_nino:8.45, score:64.398
+
+-->batch:1600 loss_var:127.78, loss_nino:10.61, score:62.557
+2023-12-21 17:06:26,397 - INFO - 
+-->batch:1600 loss_var:127.78, loss_nino:10.61, score:62.557
+
+-->epoch1 end... 
+loss_var:179.914 
+loss_nino:24.124 
+loss_com:204.039 
+score: -14.635
+2023-12-21 17:06:36,618 - INFO - 
+-->epoch1 end... 
+loss_var:179.914 
+loss_nino:24.124 
+loss_com:204.039 
+score: -14.635
+
+sc is not increase for 1 epoch
+2023-12-21 17:06:36,618 - INFO - 
+sc is not increase for 1 epoch
+================================================================================
+
+-->epoch: 2
+2023-12-21 17:06:36,618 - INFO - ================================================================================
+2023-12-21 17:06:36,618 - INFO - 
+-->epoch: 2
+
+-->batch:0 loss_var:123.76, loss_nino:8.54, score:64.476
+2023-12-21 17:06:36,856 - INFO - 
+-->batch:0 loss_var:123.76, loss_nino:8.54, score:64.476
+
+-->batch:100 loss_var:118.67, loss_nino:7.05, score:66.003
+2023-12-21 17:06:58,996 - INFO - 
+-->batch:100 loss_var:118.67, loss_nino:7.05, score:66.003
+
+-->batch:200 loss_var:123.66, loss_nino:8.38, score:63.711
+2023-12-21 17:07:21,143 - INFO - 
+-->batch:200 loss_var:123.66, loss_nino:8.38, score:63.711
+
+-->batch:300 loss_var:127.55, loss_nino:10.72, score:62.532
+2023-12-21 17:07:43,290 - INFO - 
+-->batch:300 loss_var:127.55, loss_nino:10.72, score:62.532
+
+-->batch:400 loss_var:125.54, loss_nino:10.61, score:62.434
+2023-12-21 17:08:05,436 - INFO - 
+-->batch:400 loss_var:125.54, loss_nino:10.61, score:62.434
+
+-->batch:500 loss_var:129.27, loss_nino:9.48, score:64.235
+2023-12-21 17:08:27,590 - INFO - 
+-->batch:500 loss_var:129.27, loss_nino:9.48, score:64.235
+
+-->batch:600 loss_var:123.04, loss_nino:10.13, score:62.130
+2023-12-21 17:08:49,742 - INFO - 
+-->batch:600 loss_var:123.04, loss_nino:10.13, score:62.130
+
+-->batch:700 loss_var:125.93, loss_nino:10.00, score:64.363
+2023-12-21 17:09:11,890 - INFO - 
+-->batch:700 loss_var:125.93, loss_nino:10.00, score:64.363
+
+-->batch:800 loss_var:126.06, loss_nino:9.77, score:63.326
+2023-12-21 17:09:34,039 - INFO - 
+-->batch:800 loss_var:126.06, loss_nino:9.77, score:63.326
+
+-->batch:900 loss_var:134.41, loss_nino:10.05, score:63.766
+2023-12-21 17:09:56,188 - INFO - 
+-->batch:900 loss_var:134.41, loss_nino:10.05, score:63.766
+
+-->batch:1000 loss_var:124.77, loss_nino:10.14, score:63.173
+2023-12-21 17:10:18,334 - INFO - 
+-->batch:1000 loss_var:124.77, loss_nino:10.14, score:63.173
+
+-->batch:1100 loss_var:127.21, loss_nino:8.59, score:65.507
+2023-12-21 17:10:40,506 - INFO - 
+-->batch:1100 loss_var:127.21, loss_nino:8.59, score:65.507
+
+-->batch:1200 loss_var:131.05, loss_nino:11.59, score:61.667
+2023-12-21 17:11:02,654 - INFO - 
+-->batch:1200 loss_var:131.05, loss_nino:11.59, score:61.667
+
+-->batch:1300 loss_var:121.83, loss_nino:8.75, score:64.699
+2023-12-21 17:11:24,795 - INFO - 
+-->batch:1300 loss_var:121.83, loss_nino:8.75, score:64.699
+
+-->batch:1400 loss_var:112.79, loss_nino:6.99, score:63.772
+2023-12-21 17:11:46,938 - INFO - 
+-->batch:1400 loss_var:112.79, loss_nino:6.99, score:63.772
+
+-->batch:1500 loss_var:131.52, loss_nino:10.25, score:61.599
+2023-12-21 17:12:09,076 - INFO - 
+-->batch:1500 loss_var:131.52, loss_nino:10.25, score:61.599
+
+-->batch:1600 loss_var:126.51, loss_nino:9.30, score:63.578
+2023-12-21 17:12:31,211 - INFO - 
+-->batch:1600 loss_var:126.51, loss_nino:9.30, score:63.578
+
+-->epoch2 end... 
+loss_var:194.464 
+loss_nino:28.633 
+loss_com:223.097 
+score: -11.674
+2023-12-21 17:12:41,462 - INFO - 
+-->epoch2 end... 
+loss_var:194.464 
+loss_nino:28.633 
+loss_com:223.097 
+score: -11.674
+
+sc is not increase for 2 epoch
+2023-12-21 17:12:41,463 - INFO - 
+sc is not increase for 2 epoch
+================================================================================
+
+-->epoch: 3
+2023-12-21 17:12:41,463 - INFO - ================================================================================
+2023-12-21 17:12:41,463 - INFO - 
+-->epoch: 3
+
+-->batch:0 loss_var:128.89, loss_nino:11.20, score:58.439
+2023-12-21 17:12:41,705 - INFO - 
+-->batch:0 loss_var:128.89, loss_nino:11.20, score:58.439
+
+-->batch:100 loss_var:136.20, loss_nino:10.65, score:61.598
+2023-12-21 17:13:03,917 - INFO - 
+-->batch:100 loss_var:136.20, loss_nino:10.65, score:61.598
+-->Evaluation... 
+loss_var:181.647 
+loss_nino:23.389 
+loss_com:205.037 
+score:-13.244
+2023-12-21 17:13:30,805 - INFO - -->Evaluation... 
+loss_var:181.647 
+loss_nino:23.389 
+loss_com:205.037 
+score:-13.244
+
+-->batch:200 loss_var:122.79, loss_nino:8.67, score:64.584
+2023-12-21 17:13:31,038 - INFO - 
+-->batch:200 loss_var:122.79, loss_nino:8.67, score:64.584
+
+-->batch:300 loss_var:121.90, loss_nino:7.31, score:65.392
+2023-12-21 17:13:52,791 - INFO - 
+-->batch:300 loss_var:121.90, loss_nino:7.31, score:65.392
+-->Evaluation... 
+loss_var:177.043 
+loss_nino:21.020 
+loss_com:198.063 
+score:-6.552
+2023-12-21 17:14:19,357 - INFO - -->Evaluation... 
+loss_var:177.043 
+loss_nino:21.020 
+loss_com:198.063 
+score:-6.552
+
+saving model...
+2023-12-21 17:14:19,475 - INFO - 
+saving model...
+
+-->batch:400 loss_var:120.33, loss_nino:8.85, score:64.149
+2023-12-21 17:14:19,712 - INFO - 
+-->batch:400 loss_var:120.33, loss_nino:8.85, score:64.149
+
+-->batch:500 loss_var:126.33, loss_nino:11.34, score:60.568
+2023-12-21 17:14:41,522 - INFO - 
+-->batch:500 loss_var:126.33, loss_nino:11.34, score:60.568
+-->Evaluation... 
+loss_var:182.617 
+loss_nino:23.715 
+loss_com:206.332 
+score:-10.685
+2023-12-21 17:15:08,123 - INFO - -->Evaluation... 
+loss_var:182.617 
+loss_nino:23.715 
+loss_com:206.332 
+score:-10.685
+
+-->batch:600 loss_var:117.91, loss_nino:8.63, score:64.931
+2023-12-21 17:15:08,367 - INFO - 
+-->batch:600 loss_var:117.91, loss_nino:8.63, score:64.931
+
+-->batch:700 loss_var:115.28, loss_nino:8.96, score:65.017
+2023-12-21 17:15:30,207 - INFO - 
+-->batch:700 loss_var:115.28, loss_nino:8.96, score:65.017
+-->Evaluation... 
+loss_var:185.317 
+loss_nino:23.065 
+loss_com:208.382 
+score:-6.427
+2023-12-21 17:15:56,716 - INFO - -->Evaluation... 
+loss_var:185.317 
+loss_nino:23.065 
+loss_com:208.382 
+score:-6.427
+
+saving model...
+2023-12-21 17:15:56,786 - INFO - 
+saving model...
+
+-->batch:800 loss_var:122.91, loss_nino:8.37, score:60.520
+2023-12-21 17:15:57,025 - INFO - 
+-->batch:800 loss_var:122.91, loss_nino:8.37, score:60.520
+
+-->batch:900 loss_var:127.17, loss_nino:8.99, score:62.968
+2023-12-21 17:16:18,819 - INFO - 
+-->batch:900 loss_var:127.17, loss_nino:8.99, score:62.968
+-->Evaluation... 
+loss_var:188.291 
+loss_nino:27.722 
+loss_com:216.013 
+score:-14.695
+2023-12-21 17:16:45,192 - INFO - -->Evaluation... 
+loss_var:188.291 
+loss_nino:27.722 
+loss_com:216.013 
+score:-14.695
+
+-->batch:1000 loss_var:118.23, loss_nino:10.36, score:62.746
+2023-12-21 17:16:45,437 - INFO - 
+-->batch:1000 loss_var:118.23, loss_nino:10.36, score:62.746
+
+-->batch:1100 loss_var:117.02, loss_nino:9.13, score:62.568
+2023-12-21 17:17:07,112 - INFO - 
+-->batch:1100 loss_var:117.02, loss_nino:9.13, score:62.568
+-->Evaluation... 
+loss_var:190.316 
+loss_nino:25.044 
+loss_com:215.360 
+score:-8.449
+2023-12-21 17:17:33,474 - INFO - -->Evaluation... 
+loss_var:190.316 
+loss_nino:25.044 
+loss_com:215.360 
+score:-8.449
+
+-->batch:1200 loss_var:121.11, loss_nino:8.55, score:65.337
+2023-12-21 17:17:33,708 - INFO - 
+-->batch:1200 loss_var:121.11, loss_nino:8.55, score:65.337
+
+-->batch:1300 loss_var:121.59, loss_nino:9.07, score:65.154
+2023-12-21 17:17:55,366 - INFO - 
+-->batch:1300 loss_var:121.59, loss_nino:9.07, score:65.154
+-->Evaluation... 
+loss_var:182.603 
+loss_nino:25.981 
+loss_com:208.584 
+score:-11.759
+2023-12-21 17:18:21,736 - INFO - -->Evaluation... 
+loss_var:182.603 
+loss_nino:25.981 
+loss_com:208.584 
+score:-11.759
+
+-->batch:1400 loss_var:123.97, loss_nino:8.85, score:64.920
+2023-12-21 17:18:21,971 - INFO - 
+-->batch:1400 loss_var:123.97, loss_nino:8.85, score:64.920
+
+-->batch:1500 loss_var:120.61, loss_nino:8.49, score:62.550
+2023-12-21 17:18:43,639 - INFO - 
+-->batch:1500 loss_var:120.61, loss_nino:8.49, score:62.550
+-->Evaluation... 
+loss_var:200.560 
+loss_nino:34.264 
+loss_com:234.824 
+score:-17.379
+2023-12-21 17:19:09,990 - INFO - -->Evaluation... 
+loss_var:200.560 
+loss_nino:34.264 
+loss_com:234.824 
+score:-17.379
+
+-->batch:1600 loss_var:127.36, loss_nino:9.79, score:63.639
+2023-12-21 17:19:10,225 - INFO - 
+-->batch:1600 loss_var:127.36, loss_nino:9.79, score:63.639
+
+-->epoch3 end... 
+loss_var:192.926 
+loss_nino:27.352 
+loss_com:220.278 
+score: -9.453
+2023-12-21 17:19:20,334 - INFO - 
+-->epoch3 end... 
+loss_var:192.926 
+loss_nino:27.352 
+loss_com:220.278 
+score: -9.453
+
+sc is not increase for 1 epoch
+2023-12-21 17:19:20,334 - INFO - 
+sc is not increase for 1 epoch
+================================================================================
+
+-->epoch: 4
+2023-12-21 17:19:20,334 - INFO - ================================================================================
+2023-12-21 17:19:20,334 - INFO - 
+-->epoch: 4
+
+-->batch:0 loss_var:120.79, loss_nino:8.39, score:65.950
+2023-12-21 17:19:20,573 - INFO - 
+-->batch:0 loss_var:120.79, loss_nino:8.39, score:65.950
+
+-->batch:100 loss_var:115.15, loss_nino:9.36, score:62.633
+2023-12-21 17:19:42,672 - INFO - 
+-->batch:100 loss_var:115.15, loss_nino:9.36, score:62.633
+-->Evaluation... 
+loss_var:199.136 
+loss_nino:36.141 
+loss_com:235.276 
+score:-22.936
+2023-12-21 17:20:09,484 - INFO - -->Evaluation... 
+loss_var:199.136 
+loss_nino:36.141 
+loss_com:235.276 
+score:-22.936
+
+-->batch:200 loss_var:123.86, loss_nino:9.77, score:65.077
+2023-12-21 17:20:09,718 - INFO - 
+-->batch:200 loss_var:123.86, loss_nino:9.77, score:65.077
+
+-->batch:300 loss_var:130.76, loss_nino:11.60, score:61.653
+2023-12-21 17:20:31,415 - INFO - 
+-->batch:300 loss_var:130.76, loss_nino:11.60, score:61.653
+-->Evaluation... 
+loss_var:176.588 
+loss_nino:20.428 
+loss_com:197.016 
+score:-2.000
+2023-12-21 17:20:57,776 - INFO - -->Evaluation... 
+loss_var:176.588 
+loss_nino:20.428 
+loss_com:197.016 
+score:-2.000
+
+saving model...
+2023-12-21 17:20:57,881 - INFO - 
+saving model...
+
+-->batch:400 loss_var:122.50, loss_nino:7.99, score:66.140
+2023-12-21 17:20:58,116 - INFO - 
+-->batch:400 loss_var:122.50, loss_nino:7.99, score:66.140
+
+-->batch:500 loss_var:113.49, loss_nino:7.74, score:67.174
+2023-12-21 17:21:19,772 - INFO - 
+-->batch:500 loss_var:113.49, loss_nino:7.74, score:67.174
+-->Evaluation... 
+loss_var:182.826 
+loss_nino:26.113 
+loss_com:208.939 
+score:-9.812
+2023-12-21 17:21:46,144 - INFO - -->Evaluation... 
+loss_var:182.826 
+loss_nino:26.113 
+loss_com:208.939 
+score:-9.812
+
+-->batch:600 loss_var:116.09, loss_nino:8.91, score:63.508
+2023-12-21 17:21:46,377 - INFO - 
+-->batch:600 loss_var:116.09, loss_nino:8.91, score:63.508
+
+-->batch:700 loss_var:117.20, loss_nino:8.75, score:61.670
+2023-12-21 17:22:08,099 - INFO - 
+-->batch:700 loss_var:117.20, loss_nino:8.75, score:61.670
+-->Evaluation... 
+loss_var:196.230 
+loss_nino:30.367 
+loss_com:226.597 
+score:-14.981
+2023-12-21 17:22:34,471 - INFO - -->Evaluation... 
+loss_var:196.230 
+loss_nino:30.367 
+loss_com:226.597 
+score:-14.981
+
+-->batch:800 loss_var:117.39, loss_nino:9.68, score:63.319
+2023-12-21 17:22:34,705 - INFO - 
+-->batch:800 loss_var:117.39, loss_nino:9.68, score:63.319
+
+-->batch:900 loss_var:112.42, loss_nino:8.84, score:63.844
+2023-12-21 17:22:56,399 - INFO - 
+-->batch:900 loss_var:112.42, loss_nino:8.84, score:63.844
+-->Evaluation... 
+loss_var:173.947 
+loss_nino:21.199 
+loss_com:195.146 
+score:-2.575
+2023-12-21 17:23:22,765 - INFO - -->Evaluation... 
+loss_var:173.947 
+loss_nino:21.199 
+loss_com:195.146 
+score:-2.575
+
+-->batch:1000 loss_var:119.27, loss_nino:8.97, score:63.073
+2023-12-21 17:23:23,001 - INFO - 
+-->batch:1000 loss_var:119.27, loss_nino:8.97, score:63.073
+
+-->batch:1100 loss_var:121.87, loss_nino:8.01, score:65.211
+2023-12-21 17:23:44,691 - INFO - 
+-->batch:1100 loss_var:121.87, loss_nino:8.01, score:65.211
+-->Evaluation... 
+loss_var:185.635 
+loss_nino:22.532 
+loss_com:208.167 
+score:1.981
+2023-12-21 17:24:11,063 - INFO - -->Evaluation... 
+loss_var:185.635 
+loss_nino:22.532 
+loss_com:208.167 
+score:1.981
+
+saving model...
+2023-12-21 17:24:11,169 - INFO - 
+saving model...
+
+-->batch:1200 loss_var:120.60, loss_nino:9.99, score:62.702
+2023-12-21 17:24:11,402 - INFO - 
+-->batch:1200 loss_var:120.60, loss_nino:9.99, score:62.702
+
+-->batch:1300 loss_var:112.67, loss_nino:7.84, score:61.074
+2023-12-21 17:24:33,066 - INFO - 
+-->batch:1300 loss_var:112.67, loss_nino:7.84, score:61.074
+-->Evaluation... 
+loss_var:182.201 
+loss_nino:21.278 
+loss_com:203.479 
+score:1.203
+2023-12-21 17:24:59,409 - INFO - -->Evaluation... 
+loss_var:182.201 
+loss_nino:21.278 
+loss_com:203.479 
+score:1.203
+
+-->batch:1400 loss_var:114.64, loss_nino:8.36, score:63.307
+2023-12-21 17:24:59,644 - INFO - 
+-->batch:1400 loss_var:114.64, loss_nino:8.36, score:63.307
+
+-->batch:1500 loss_var:115.60, loss_nino:7.93, score:64.735
+2023-12-21 17:25:21,324 - INFO - 
+-->batch:1500 loss_var:115.60, loss_nino:7.93, score:64.735
+-->Evaluation... 
+loss_var:179.275 
+loss_nino:20.031 
+loss_com:199.307 
+score:3.865
+2023-12-21 17:25:47,669 - INFO - -->Evaluation... 
+loss_var:179.275 
+loss_nino:20.031 
+loss_com:199.307 
+score:3.865
+
+saving model...
+2023-12-21 17:25:47,728 - INFO - 
+saving model...
+
+-->batch:1600 loss_var:114.92, loss_nino:9.10, score:56.896
+2023-12-21 17:25:47,961 - INFO - 
+-->batch:1600 loss_var:114.92, loss_nino:9.10, score:56.896
+
+-->epoch4 end... 
+loss_var:183.085 
+loss_nino:24.385 
+loss_com:207.470 
+score: -5.229
+2023-12-21 17:25:58,071 - INFO - 
+-->epoch4 end... 
+loss_var:183.085 
+loss_nino:24.385 
+loss_com:207.470 
+score: -5.229
+
+sc is not increase for 1 epoch
+2023-12-21 17:25:58,071 - INFO - 
+sc is not increase for 1 epoch
+================================================================================
+
+-->epoch: 5
+2023-12-21 17:25:58,071 - INFO - ================================================================================
+2023-12-21 17:25:58,071 - INFO - 
+-->epoch: 5
+
+-->batch:0 loss_var:117.87, loss_nino:9.61, score:62.502
+2023-12-21 17:25:58,309 - INFO - 
+-->batch:0 loss_var:117.87, loss_nino:9.61, score:62.502
+
+-->batch:100 loss_var:123.08, loss_nino:8.68, score:65.362
+2023-12-21 17:26:20,444 - INFO - 
+-->batch:100 loss_var:123.08, loss_nino:8.68, score:65.362
+-->Evaluation... 
+loss_var:175.451 
+loss_nino:22.101 
+loss_com:197.552 
+score:-9.720
+2023-12-21 17:26:47,254 - INFO - -->Evaluation... 
+loss_var:175.451 
+loss_nino:22.101 
+loss_com:197.552 
+score:-9.720
+
+-->batch:200 loss_var:115.65, loss_nino:7.74, score:63.438
+2023-12-21 17:26:47,490 - INFO - 
+-->batch:200 loss_var:115.65, loss_nino:7.74, score:63.438
+
+-->batch:300 loss_var:113.13, loss_nino:7.35, score:64.985
+2023-12-21 17:27:09,136 - INFO - 
+-->batch:300 loss_var:113.13, loss_nino:7.35, score:64.985
+-->Evaluation... 
+loss_var:189.406 
+loss_nino:28.969 
+loss_com:218.376 
+score:-9.977
+2023-12-21 17:27:35,500 - INFO - -->Evaluation... 
+loss_var:189.406 
+loss_nino:28.969 
+loss_com:218.376 
+score:-9.977
+
+-->batch:400 loss_var:121.57, loss_nino:9.27, score:63.315
+2023-12-21 17:27:35,749 - INFO - 
+-->batch:400 loss_var:121.57, loss_nino:9.27, score:63.315
+
+-->batch:500 loss_var:115.19, loss_nino:8.40, score:65.149
+2023-12-21 17:27:57,395 - INFO - 
+-->batch:500 loss_var:115.19, loss_nino:8.40, score:65.149
+-->Evaluation... 
+loss_var:187.155 
+loss_nino:25.942 
+loss_com:213.097 
+score:-7.068
+2023-12-21 17:28:23,750 - INFO - -->Evaluation... 
+loss_var:187.155 
+loss_nino:25.942 
+loss_com:213.097 
+score:-7.068
+
+-->batch:600 loss_var:120.86, loss_nino:7.29, score:66.986
+2023-12-21 17:28:23,986 - INFO - 
+-->batch:600 loss_var:120.86, loss_nino:7.29, score:66.986
+
+-->batch:700 loss_var:107.72, loss_nino:6.31, score:67.545
+2023-12-21 17:28:45,672 - INFO - 
+-->batch:700 loss_var:107.72, loss_nino:6.31, score:67.545
+-->Evaluation... 
+loss_var:180.034 
+loss_nino:21.490 
+loss_com:201.524 
+score:-2.512
+2023-12-21 17:29:12,043 - INFO - -->Evaluation... 
+loss_var:180.034 
+loss_nino:21.490 
+loss_com:201.524 
+score:-2.512
+
+-->batch:800 loss_var:117.80, loss_nino:8.94, score:64.479
+2023-12-21 17:29:12,276 - INFO - 
+-->batch:800 loss_var:117.80, loss_nino:8.94, score:64.479
+
+-->batch:900 loss_var:118.81, loss_nino:9.10, score:65.243
+2023-12-21 17:29:33,962 - INFO - 
+-->batch:900 loss_var:118.81, loss_nino:9.10, score:65.243
+-->Evaluation... 
+loss_var:180.156 
+loss_nino:23.396 
+loss_com:203.552 
+score:-1.309
+2023-12-21 17:30:00,315 - INFO - -->Evaluation... 
+loss_var:180.156 
+loss_nino:23.396 
+loss_com:203.552 
+score:-1.309
+
+-->batch:1000 loss_var:120.24, loss_nino:7.75, score:64.127
+2023-12-21 17:30:00,549 - INFO - 
+-->batch:1000 loss_var:120.24, loss_nino:7.75, score:64.127
+
+-->batch:1100 loss_var:124.97, loss_nino:9.21, score:63.458
+2023-12-21 17:30:22,216 - INFO - 
+-->batch:1100 loss_var:124.97, loss_nino:9.21, score:63.458
+-->Evaluation... 
+loss_var:191.823 
+loss_nino:28.251 
+loss_com:220.073 
+score:-8.635
+2023-12-21 17:30:48,587 - INFO - -->Evaluation... 
+loss_var:191.823 
+loss_nino:28.251 
+loss_com:220.073 
+score:-8.635
+
+-->batch:1200 loss_var:113.13, loss_nino:6.51, score:68.310
+2023-12-21 17:30:48,822 - INFO - 
+-->batch:1200 loss_var:113.13, loss_nino:6.51, score:68.310
+
+-->batch:1300 loss_var:121.44, loss_nino:10.07, score:59.874
+2023-12-21 17:31:10,476 - INFO - 
+-->batch:1300 loss_var:121.44, loss_nino:10.07, score:59.874
+-->Evaluation... 
+loss_var:180.894 
+loss_nino:21.167 
+loss_com:202.061 
+score:-2.579
+2023-12-21 17:31:36,845 - INFO - -->Evaluation... 
+loss_var:180.894 
+loss_nino:21.167 
+loss_com:202.061 
+score:-2.579
+
+-->batch:1400 loss_var:119.00, loss_nino:8.21, score:65.223
+2023-12-21 17:31:37,079 - INFO - 
+-->batch:1400 loss_var:119.00, loss_nino:8.21, score:65.223
+
+-->batch:1500 loss_var:110.48, loss_nino:6.88, score:67.281
+2023-12-21 17:31:58,749 - INFO - 
+-->batch:1500 loss_var:110.48, loss_nino:6.88, score:67.281
+-->Evaluation... 
+loss_var:180.344 
+loss_nino:23.505 
+loss_com:203.849 
+score:-1.811
+2023-12-21 17:32:25,106 - INFO - -->Evaluation... 
+loss_var:180.344 
+loss_nino:23.505 
+loss_com:203.849 
+score:-1.811
+
+-->batch:1600 loss_var:121.79, loss_nino:8.05, score:64.153
+2023-12-21 17:32:25,344 - INFO - 
+-->batch:1600 loss_var:121.79, loss_nino:8.05, score:64.153
+
+-->epoch5 end... 
+loss_var:183.727 
+loss_nino:20.909 
+loss_com:204.636 
+score: -0.596
+2023-12-21 17:32:35,466 - INFO - 
+-->epoch5 end... 
+loss_var:183.727 
+loss_nino:20.909 
+loss_com:204.636 
+score: -0.596
+
+sc is not increase for 2 epoch
+2023-12-21 17:32:35,466 - INFO - 
+sc is not increase for 2 epoch
+================================================================================
+
+-->epoch: 6
+2023-12-21 17:32:35,466 - INFO - ================================================================================
+2023-12-21 17:32:35,466 - INFO - 
+-->epoch: 6
+
+-->batch:0 loss_var:125.00, loss_nino:9.14, score:63.047
+2023-12-21 17:32:35,706 - INFO - 
+-->batch:0 loss_var:125.00, loss_nino:9.14, score:63.047
+
+-->batch:100 loss_var:120.24, loss_nino:8.95, score:62.148
+2023-12-21 17:32:57,871 - INFO - 
+-->batch:100 loss_var:120.24, loss_nino:8.95, score:62.148
+-->Evaluation... 
+loss_var:183.426 
+loss_nino:24.904 
+loss_com:208.330 
+score:-11.300
+2023-12-21 17:33:24,681 - INFO - -->Evaluation... 
+loss_var:183.426 
+loss_nino:24.904 
+loss_com:208.330 
+score:-11.300
+
+-->batch:200 loss_var:116.85, loss_nino:7.62, score:65.021
+2023-12-21 17:33:24,913 - INFO - 
+-->batch:200 loss_var:116.85, loss_nino:7.62, score:65.021
+
+-->batch:300 loss_var:109.89, loss_nino:7.75, score:66.685
+2023-12-21 17:33:46,594 - INFO - 
+-->batch:300 loss_var:109.89, loss_nino:7.75, score:66.685
+-->Evaluation... 
+loss_var:184.907 
+loss_nino:23.842 
+loss_com:208.749 
+score:-0.578
+2023-12-21 17:34:12,970 - INFO - -->Evaluation... 
+loss_var:184.907 
+loss_nino:23.842 
+loss_com:208.749 
+score:-0.578
+
+-->batch:400 loss_var:128.84, loss_nino:10.38, score:63.875
+2023-12-21 17:34:13,204 - INFO - 
+-->batch:400 loss_var:128.84, loss_nino:10.38, score:63.875
+
+-->batch:500 loss_var:107.90, loss_nino:6.83, score:65.120
+2023-12-21 17:34:34,888 - INFO - 
+-->batch:500 loss_var:107.90, loss_nino:6.83, score:65.120
+-->Evaluation... 
+loss_var:188.895 
+loss_nino:27.331 
+loss_com:216.225 
+score:-15.142
+2023-12-21 17:35:01,236 - INFO - -->Evaluation... 
+loss_var:188.895 
+loss_nino:27.331 
+loss_com:216.225 
+score:-15.142
+
+-->batch:600 loss_var:120.60, loss_nino:7.81, score:66.520
+2023-12-21 17:35:01,469 - INFO - 
+-->batch:600 loss_var:120.60, loss_nino:7.81, score:66.520
+
+-->batch:700 loss_var:112.76, loss_nino:8.93, score:64.777
+2023-12-21 17:35:23,137 - INFO - 
+-->batch:700 loss_var:112.76, loss_nino:8.93, score:64.777
+-->Evaluation... 
+loss_var:185.928 
+loss_nino:24.765 
+loss_com:210.693 
+score:-4.933
+2023-12-21 17:35:49,499 - INFO - -->Evaluation... 
+loss_var:185.928 
+loss_nino:24.765 
+loss_com:210.693 
+score:-4.933
+
+-->batch:800 loss_var:117.65, loss_nino:7.91, score:66.429
+2023-12-21 17:35:49,734 - INFO - 
+-->batch:800 loss_var:117.65, loss_nino:7.91, score:66.429
+
+-->batch:900 loss_var:117.45, loss_nino:7.60, score:66.420
+2023-12-21 17:36:11,410 - INFO - 
+-->batch:900 loss_var:117.45, loss_nino:7.60, score:66.420
+-->Evaluation... 
+loss_var:177.483 
+loss_nino:24.427 
+loss_com:201.910 
+score:-6.757
+2023-12-21 17:36:37,791 - INFO - -->Evaluation... 
+loss_var:177.483 
+loss_nino:24.427 
+loss_com:201.910 
+score:-6.757
+
+-->batch:1000 loss_var:110.88, loss_nino:7.92, score:66.661
+2023-12-21 17:36:38,025 - INFO - 
+-->batch:1000 loss_var:110.88, loss_nino:7.92, score:66.661
+
+-->batch:1100 loss_var:110.35, loss_nino:7.34, score:66.582
+2023-12-21 17:36:59,709 - INFO - 
+-->batch:1100 loss_var:110.35, loss_nino:7.34, score:66.582
+-->Evaluation... 
+loss_var:190.855 
+loss_nino:29.720 
+loss_com:220.576 
+score:-14.082
+2023-12-21 17:37:26,063 - INFO - -->Evaluation... 
+loss_var:190.855 
+loss_nino:29.720 
+loss_com:220.576 
+score:-14.082
+
+-->batch:1200 loss_var:111.88, loss_nino:8.52, score:63.884
+2023-12-21 17:37:26,296 - INFO - 
+-->batch:1200 loss_var:111.88, loss_nino:8.52, score:63.884
+
+-->batch:1300 loss_var:110.96, loss_nino:6.61, score:68.265
+2023-12-21 17:37:48,019 - INFO - 
+-->batch:1300 loss_var:110.96, loss_nino:6.61, score:68.265
+-->Evaluation... 
+loss_var:183.546 
+loss_nino:23.484 
+loss_com:207.030 
+score:0.638
+2023-12-21 17:38:14,400 - INFO - -->Evaluation... 
+loss_var:183.546 
+loss_nino:23.484 
+loss_com:207.030 
+score:0.638
+
+-->batch:1400 loss_var:126.54, loss_nino:9.39, score:64.156
+2023-12-21 17:38:14,634 - INFO - 
+-->batch:1400 loss_var:126.54, loss_nino:9.39, score:64.156
+
+-->batch:1500 loss_var:109.35, loss_nino:8.28, score:65.269
+2023-12-21 17:38:36,333 - INFO - 
+-->batch:1500 loss_var:109.35, loss_nino:8.28, score:65.269
+-->Evaluation... 
+loss_var:176.715 
+loss_nino:20.513 
+loss_com:197.228 
+score:0.817
+2023-12-21 17:39:02,711 - INFO - -->Evaluation... 
+loss_var:176.715 
+loss_nino:20.513 
+loss_com:197.228 
+score:0.817
+
+-->batch:1600 loss_var:121.68, loss_nino:9.33, score:65.059
+2023-12-21 17:39:02,946 - INFO - 
+-->batch:1600 loss_var:121.68, loss_nino:9.33, score:65.059
+
+-->epoch6 end... 
+loss_var:178.476 
+loss_nino:22.010 
+loss_com:200.487 
+score: -0.553
+2023-12-21 17:39:13,078 - INFO - 
+-->epoch6 end... 
+loss_var:178.476 
+loss_nino:22.010 
+loss_com:200.487 
+score: -0.553
+
+sc is not increase for 3 epoch
+2023-12-21 17:39:13,078 - INFO - 
+sc is not increase for 3 epoch
+================================================================================
+
+-->epoch: 7
+2023-12-21 17:39:13,079 - INFO - ================================================================================
+2023-12-21 17:39:13,079 - INFO - 
+-->epoch: 7
+
+-->batch:0 loss_var:131.20, loss_nino:9.74, score:62.750
+2023-12-21 17:39:13,317 - INFO - 
+-->batch:0 loss_var:131.20, loss_nino:9.74, score:62.750
+
+-->batch:100 loss_var:120.87, loss_nino:7.72, score:64.750
+2023-12-21 17:39:35,461 - INFO - 
+-->batch:100 loss_var:120.87, loss_nino:7.72, score:64.750
+-->Evaluation... 
+loss_var:183.913 
+loss_nino:26.642 
+loss_com:210.555 
+score:-10.294
+2023-12-21 17:40:02,270 - INFO - -->Evaluation... 
+loss_var:183.913 
+loss_nino:26.642 
+loss_com:210.555 
+score:-10.294
+
+-->batch:200 loss_var:120.57, loss_nino:8.48, score:64.420
+2023-12-21 17:40:02,504 - INFO - 
+-->batch:200 loss_var:120.57, loss_nino:8.48, score:64.420
+
+-->batch:300 loss_var:110.30, loss_nino:6.46, score:67.819
+2023-12-21 17:40:24,218 - INFO - 
+-->batch:300 loss_var:110.30, loss_nino:6.46, score:67.819
+-->Evaluation... 
+loss_var:181.537 
+loss_nino:24.947 
+loss_com:206.484 
+score:-2.721
+2023-12-21 17:40:50,620 - INFO - -->Evaluation... 
+loss_var:181.537 
+loss_nino:24.947 
+loss_com:206.484 
+score:-2.721
+
+-->batch:400 loss_var:125.20, loss_nino:9.71, score:63.898
+2023-12-21 17:40:50,853 - INFO - 
+-->batch:400 loss_var:125.20, loss_nino:9.71, score:63.898
+
+-->batch:500 loss_var:119.45, loss_nino:8.56, score:63.451
+2023-12-21 17:41:12,555 - INFO - 
+-->batch:500 loss_var:119.45, loss_nino:8.56, score:63.451
+-->Evaluation... 
+loss_var:184.252 
+loss_nino:24.723 
+loss_com:208.975 
+score:-2.901
+2023-12-21 17:41:38,953 - INFO - -->Evaluation... 
+loss_var:184.252 
+loss_nino:24.723 
+loss_com:208.975 
+score:-2.901
+
+-->batch:600 loss_var:115.02, loss_nino:7.04, score:64.887
+2023-12-21 17:41:39,185 - INFO - 
+-->batch:600 loss_var:115.02, loss_nino:7.04, score:64.887
+
+-->batch:700 loss_var:115.70, loss_nino:7.11, score:66.788
+2023-12-21 17:42:00,910 - INFO - 
+-->batch:700 loss_var:115.70, loss_nino:7.11, score:66.788
+-->Evaluation... 
+loss_var:185.964 
+loss_nino:27.835 
+loss_com:213.799 
+score:-9.667
+2023-12-21 17:42:27,281 - INFO - -->Evaluation... 
+loss_var:185.964 
+loss_nino:27.835 
+loss_com:213.799 
+score:-9.667
+
+-->batch:800 loss_var:117.00, loss_nino:8.98, score:63.824
+2023-12-21 17:42:27,516 - INFO - 
+-->batch:800 loss_var:117.00, loss_nino:8.98, score:63.824
+
+-->batch:900 loss_var:112.39, loss_nino:7.43, score:66.675
+2023-12-21 17:42:49,210 - INFO - 
+-->batch:900 loss_var:112.39, loss_nino:7.43, score:66.675
+-->Evaluation... 
+loss_var:203.944 
+loss_nino:36.271 
+loss_com:240.215 
+score:-26.542
+2023-12-21 17:43:15,593 - INFO - -->Evaluation... 
+loss_var:203.944 
+loss_nino:36.271 
+loss_com:240.215 
+score:-26.542
+
+-->batch:1000 loss_var:108.79, loss_nino:7.97, score:66.308
+2023-12-21 17:43:15,826 - INFO - 
+-->batch:1000 loss_var:108.79, loss_nino:7.97, score:66.308
+
+-->batch:1100 loss_var:120.64, loss_nino:9.14, score:63.277
+2023-12-21 17:43:37,527 - INFO - 
+-->batch:1100 loss_var:120.64, loss_nino:9.14, score:63.277
+-->Evaluation... 
+loss_var:200.653 
+loss_nino:30.518 
+loss_com:231.171 
+score:-8.280
+2023-12-21 17:44:03,913 - INFO - -->Evaluation... 
+loss_var:200.653 
+loss_nino:30.518 
+loss_com:231.171 
+score:-8.280
+
+-->batch:1200 loss_var:117.82, loss_nino:7.43, score:66.541
+2023-12-21 17:44:04,147 - INFO - 
+-->batch:1200 loss_var:117.82, loss_nino:7.43, score:66.541
+
+-->batch:1300 loss_var:114.04, loss_nino:7.37, score:66.486
+2023-12-21 17:44:25,856 - INFO - 
+-->batch:1300 loss_var:114.04, loss_nino:7.37, score:66.486
+-->Evaluation... 
+loss_var:183.632 
+loss_nino:23.608 
+loss_com:207.241 
+score:-3.591
+2023-12-21 17:44:52,217 - INFO - -->Evaluation... 
+loss_var:183.632 
+loss_nino:23.608 
+loss_com:207.241 
+score:-3.591
+
+-->batch:1400 loss_var:123.29, loss_nino:7.99, score:64.210
+2023-12-21 17:44:52,463 - INFO - 
+-->batch:1400 loss_var:123.29, loss_nino:7.99, score:64.210
+
+-->batch:1500 loss_var:109.16, loss_nino:7.88, score:66.263
+2023-12-21 17:45:14,153 - INFO - 
+-->batch:1500 loss_var:109.16, loss_nino:7.88, score:66.263
+-->Evaluation... 
+loss_var:184.868 
+loss_nino:26.232 
+loss_com:211.100 
+score:-11.563
+2023-12-21 17:45:40,528 - INFO - -->Evaluation... 
+loss_var:184.868 
+loss_nino:26.232 
+loss_com:211.100 
+score:-11.563
+
+-->batch:1600 loss_var:116.38, loss_nino:7.59, score:63.761
+2023-12-21 17:45:40,761 - INFO - 
+-->batch:1600 loss_var:116.38, loss_nino:7.59, score:63.761
+
+-->epoch7 end... 
+loss_var:182.862 
+loss_nino:23.415 
+loss_com:206.276 
+score: -4.046
+2023-12-21 17:45:50,890 - INFO - 
+-->epoch7 end... 
+loss_var:182.862 
+loss_nino:23.415 
+loss_com:206.276 
+score: -4.046
+
+sc is not increase for 4 epoch
+2023-12-21 17:45:50,890 - INFO - 
+sc is not increase for 4 epoch
+
+-----!!!early stopping reached, max(sceval)= 3.864600!!!-----
+2023-12-21 17:45:50,890 - INFO - 
+-----!!!early stopping reached, max(sceval)= 3.864600!!!-----
