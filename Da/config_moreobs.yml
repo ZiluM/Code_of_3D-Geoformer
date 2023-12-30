@@ -1,0 +1,23 @@
+job_name: 'poppo0p9_moreobs' # name of the job # means add variance to the analysis
+# ==============================
+start_time: "1980010100" # YYYYMMDDHH
+DA_length: 200 # in months
+# ==============================
+Nobs: 8 # number of observations
+obs_locs: [[269,0],[278,7],[123,-6],[202,2],[210,-18],[172,1],[144,14],[124,-2]]
+# obs_noise: 0.1 # observation noise
+obs_noise: 0.1 # variance of observation noise
+obs_path : '/glade/work/zilumeng/3D_trans/data/GODAS_up150m_temp_nino_tauxy_1980_2021_kb.nc'
+# ==============================
+Nens: 100 # number of ensemble members
+ens_path : '/glade/work/zilumeng/3D_trans/data/CMIP6_separate_model_up150m_tauxy_Nor_1850_2014_kb.nc'
+model_config: '/glade/work/zilumeng/3D_trans/Code'
+Ralpha: 0.9 # alpha * xp + (1-alpha) * xa
+# ==============================
+max_num : 30
+model_path : '/glade/work/zilumeng/3D_trans/model/Geoformer_beforeTrans.pkl'
+# ==============================
+save_path : '/glade/work/zilumeng/3D_trans/Da/Da_res/'
+# ==============================
+post_path : '/glade/work/zilumeng/3D_trans/Da/Da_res/'
+
