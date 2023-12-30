@@ -97,6 +97,7 @@ class Geoformer(nn.Module):
             assert predictand is None
             predictand = predictor[:, -1:]
             for t in range(self.mypara.output_length):
+                # print(t,predictand.shape,en_out.shape,predictor.shape)
                 out_mask = self.make_mask_matrix(predictand.size(1))
                 outvar_pred = self.decode(
                     predictand,

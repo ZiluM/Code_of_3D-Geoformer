@@ -31,11 +31,15 @@ files = file_name("./model")
 file_num = len(files)
 lead_max = mypara.output_length
 adr_datain = (
-    "./data/GODAS_group_up150_temp_tauxy_8021_kb.nc"
+    # "./data/GODAS_group_up150_temp_tauxy_8021_kb.nc"
+    "./data/GODAS_group_up150_temp_tauxy_1980_2021_kb.nc"
 )
-adr_oridata = "./data/GODAS_up150m_temp_nino_tauxy_kb.nc"
+# adr_oridata = "./data/GODAS_up150m_temp_nino_tauxy_kb.nc"
+adr_oridata = "./data/GODAS_up150m_temp_nino_tauxy_1980_2021_kb.nc"
 # ---------------------------------------------------------
+num = 0
 for i_file in files[: file_num + 1]:
+    num += 1
     fig1 = plt.figure(figsize=(5, 2.5), dpi=300)
     ax1 = fig1.add_subplot(1, 2, 1)
     ax2 = fig1.add_subplot(1, 2, 2)
@@ -149,6 +153,6 @@ for i_file in files[: file_num + 1]:
     _ = ax2.text(x=0.02, y=11.24, s="(b)", fontsize=9)
 
     plt.tight_layout()
-    plt.savefig("./model/test_skill.png")
+    plt.savefig(f"./model/{num}test_skill.png")
     # plt.show()
     print("*************" * 8)

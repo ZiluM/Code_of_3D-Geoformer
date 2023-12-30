@@ -19,13 +19,13 @@ mypara.warmup = 2000
 
 # data related
 mypara.adr_pretr = (
-    "./data/up150_tauxy/CMIP6_separate_model_up150m_tauxy_Nor_kb.nc"
+    "./data/CMIP6_separate_model_up150m_tauxy_Nor_1850_2014_kb.nc"
 )
 mypara.interval = 4
 mypara.TraindataProportion = 0.9
 mypara.all_group = 13000
 mypara.adr_eval = (
-    "./data/up150_tauxy/SODA_ORAS_group_temp_tauxy_before1979_kb.nc"
+    "./data/SODA_ORAS_group_temp_tauxy_before1979_kb.nc"
 )
 mypara.needtauxy = True
 mypara.input_channal = 7  # n_lev of 3D temperature
