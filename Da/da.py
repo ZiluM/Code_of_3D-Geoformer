@@ -42,11 +42,13 @@ config['my_para'] = mypara
 config['start_time'] = dt.datetime(int(tmp[:4]),int(tmp[4:6]),int(tmp[6:8]),int(tmp[8:10]))
 config['current_time'] = dt.datetime(int(tmp[:4]),int(tmp[4:6]),int(tmp[6:8]),int(tmp[8:10]))
 
+config['Nino34'] = {'xa':[],'xp':[]}
 
 
-all_obs_type = utils.get_obs_type(config)
+
+all_obs_type = utils.get_obs_type2(config)
 # print (all_obs_type)
-all_obs = utils.get_obs(all_obs_type,config)
+all_obs = utils.get_obs2(all_obs_type,config)
 utils.save_obs(all_obs,config)
 ens_xp = utils.init_ensemble(config,mypara) # Nens,12,lev,lat,lon
 # print (ens_xp.shape)
@@ -60,7 +62,11 @@ Nlon = mypara.lon_range[1] - mypara.lon_range[0]
 if config['forecast_model'] == 'dl':
     adr_model = config['model_path']
     mymodel = Geoformer(mypara).to(mypara.device)
-    mymodel.load_state_dict(torch.load(adr_model))
+    if torch.cuda.is_available():
+        # mymodel = torch.nn.DataParallel(mymodel)
+        mymodel.load_state_dict(torch.load(adr_model))
+    else:
+        mymodel.load_state_dict(torch.load(adr_model,map_location=torch.device('cpu')))
     mymodel.eval()
     function_prediction = utils.dpl_forcast
 elif config['forecast_model'] == 'lim':
@@ -82,6 +88,7 @@ for DA_t in range(0,config['DA_length'],config['obs_mean_length']):
     obs_data = all_obs[obs_idx]
     obs_idx = obs_idx + 1
     logger.info("Assimilation Step:" + str(DA_t))
+    logger.info("xp shape:" + str(xp.shape))
     utils.save_xp(xp,config)
     for i in range(Nobs):
         obs_type = all_obs_type[i]
@@ -104,6 +111,13 @@ for DA_t in range(0,config['DA_length'],config['obs_mean_length']):
     config['current_time'] = config['current_time'] + relativedelta(months=1) * config['obs_mean_length']
 
 logger.info("DA ends ======================")
+
+
+# if config['lite_post']:
+    # pass
+res = utils.lite_post(config)
+utils.save_lite_post(config,res)
+    
 
 
 

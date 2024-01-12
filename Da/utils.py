@@ -17,7 +17,88 @@ import h5py
 sys.path.append("/glade/work/zilumeng/SSNLIM")
 from slim import *
 from EOF import EOF
+# sys.path.append("/glade/work/zilumeng/3D_trans/Da/post")
+# from putils import REAL_DATA,field_corr
+# import putils.REAL_DATA as REAL_DATA
+
 # from 
+
+class REAL_DATA:
+    def __init__(self,config):
+        # obs_path = config['obs_path']
+        mypara = config['my_para']
+        needtauxy = mypara.needtauxy
+        lon_range = mypara.lon_range
+        lat_range = mypara.lat_range
+        lev_range = mypara.lev_range
+        address = config['true_path']
+        data_in = xr.open_dataset(address)
+        self.lev = data_in["lev"].values
+        self.lat = data_in["lat"].values
+        self.lon = data_in["lon"].values
+        self.lev_range = lev_range
+        self.lon_range = lon_range
+        self.lat_range = lat_range
+
+        temp = data_in["temperatureNor"][
+            :,
+            lev_range[0] : lev_range[1],
+            lat_range[0] : lat_range[1],
+            lon_range[0] : lon_range[1],
+        ].values
+        temp = np.nan_to_num(temp)
+        temp[abs(temp) > 999] = 0
+        if needtauxy:
+            taux = data_in["tauxNor"][
+                :,
+                lat_range[0] : lat_range[1],
+                lon_range[0] : lon_range[1],
+            ].values
+            taux = np.nan_to_num(taux)
+            taux[abs(taux) > 999] = 0
+            tauy = data_in["tauyNor"][
+                :,
+                lat_range[0] : lat_range[1],
+                lon_range[0] : lon_range[1],
+            ].values
+            tauy = np.nan_to_num(tauy)
+            tauy[abs(tauy) > 999] = 0
+            # --------------
+            self.dataX = np.concatenate(
+                (taux[:, None], tauy[:, None], temp), axis=1
+            )
+            del temp, taux, tauy
+        else:
+            self.dataX = temp
+        start_time = config['start_time']
+        times = pd.date_range("1980-01-01", "2021-12-31", freq="MS")
+        start_index = np.abs(times - start_time).argmin()
+        self.dataX = self.dataX[start_index:config['DA_length']+start_index]
+        # data = sd.load()
+        data = data_in
+        stdtemp = data["stdtemp"][mypara.lev_range[0] : mypara.lev_range[1]].values
+        stdtemp = np.nanmean(stdtemp, axis=(1, 2))
+        stdtaux = data["stdtaux"].values
+        stdtaux = np.nanmean(stdtaux, axis=(0, 1))
+        stdtauy = data["stdtauy"].values
+        stdtauy = np.nanmean(stdtauy, axis=(0, 1))
+        stds = np.concatenate((stdtaux[None], stdtauy[None], stdtemp), axis=0)
+        config['obs_std'] = stds
+        lon_nino_loc = mypara.lon_nino_relative
+        lat_nino_loc = mypara.lat_nino_relative
+        Nino34 = self.dataX[:,2,lat_nino_loc[0]:lat_nino_loc[1],lon_nino_loc[0]:lon_nino_loc[1]].mean(axis=(1,2))
+        config['real_nino34'] = Nino34 * stds[2]
+
+def field_corr(field1, field2):
+    """
+    field1: time, nspace
+    field2: time, nspace
+    """
+    field1a = field1 - field1.mean(axis=0)
+    field2a = field2 - field2.mean(axis=0)
+    covar = np.einsum("ij...,ij...->j...", field1a, field2a) / (field1a.shape[0] - 1)  # covar:nspace
+    corr = covar / np.std(field1a, axis=0) / np.std(field2a, axis=0)  # corr: nspace
+    return corr.real
 
 
 class LIM_Model():
@@ -91,7 +172,7 @@ class load_noise():
         noise_ls = []
         name_ls = self.name_ls
         idxs = np.random.randint(0,len(name_ls)-1,size=2,)
-        print(idxs)
+        # print(idxs)
         idxs = [name_ls[idxs[i]] for i in range(2)]
         number1 = number // 2
         number2 = number - number1
@@ -112,6 +193,45 @@ class load_noise():
             noise_ls.append(noise1)
         noise_ls = np.concatenate(noise_ls,axis=0)
         return noise_ls
+    
+class load_noise2():
+    """
+    load noise for each lead time from EOF
+    """
+    def __init__(self,config):
+        self.config = config
+        self.noise_path = config['noise_path']
+        self.eofs = []
+        for i in range(0,12):
+            with open(self.noise_path%i,'rb') as f:
+                eof = pkl.load(f)
+            self.eofs.append(eof)
+    def load(self,month,max_lead,number,pc_num=100,correct=False,correct_amp=None):
+        """
+        month: current month
+        number: number of noise
+        """
+        np.random.seed(self.config['seed'])
+        patterns_ls = []
+        # idx = lead_month - 1
+        for idx in range(max_lead):
+            eof = self.eofs[idx]
+        # pcs = 
+            pcs = np.random.randn(number,pc_num)
+            patterns = eof.decoder1(pcs)
+            if patterns.shape[0] != number:
+                raise ValueError("patterns shape error, patterns shape[0]: %d"%patterns.shape[0])
+            if correct:
+                patterns = patterns * correct_amp
+            patterns_ls.append(patterns)
+        patterns_ls = np.array(patterns_ls) # lead_month,ens_number,lev,lat,lon
+        patterns_ls = patterns_ls.swapaxes(0,1) # ens_number,lead_month,lev,lat,lon
+        return patterns_ls
+
+
+
+
+        
             
 
 
@@ -259,6 +379,68 @@ def get_obs_type(config):
         all_obs.append(ob_dict)
     return all_obs
 
+
+def get_obs_type2(config):
+    with open(config['obs_locs'],'rb') as f:
+        obs_data = pkl.load(f)
+    start_time = config['start_time']
+    Nobs = len(obs_data)
+    config['Nobs'] = Nobs
+    all_obs = []
+    for ob in range(Nobs):
+        ob_dict = {}
+        ob_dict['variable'] = 'tos'
+        ob_dict['lat'] = float(obs_data[ob]['lat'].values)
+        ob_dict['lon'] = float(obs_data[ob]['lon'].values)
+        ob_dict['error_var'] = config['obs_noise']
+        ob_dict['obs_mean_length'] = int(config['obs_mean_length'])
+        all_obs.append(ob_dict)
+    return all_obs
+
+def get_obs2(types,config):
+    # get the observation
+    obs_path = config['obs_path']
+    data_times = pd.date_range("1980-01-01", "2021-12-31", freq="MS")
+    current_time = config['start_time']
+    with open(config['obs_locs'],'rb') as f:
+        obs_data = pkl.load(f)
+    config['logger'].info("OBS Data loaded Start:" + str(current_time))
+    config['obs_std'] = [1,2,3] # taux, tauy, temp
+    obs_ls = []
+    for t in range(config['DA_length']):
+        obs_current = []
+        for idx,type in enumerate(types):
+            lat = type['lat']
+            lon = type['lon']
+            obs = obs_data[idx].loc[current_time]
+            obs_current.append(obs)
+        obs_ls.append(obs_current)
+        current_time += relativedelta(months=1)
+    
+    config['logger'].info("OBS Data loaded End:" + str(current_time))
+    config['logger'].info("OBS before mean" + str(np.array(obs_ls).shape))
+
+    res = np.array(obs_ls)
+    mean_res = []
+    for i in range(0,res.shape[0],config['obs_mean_length']):
+        mean_res.append(res[i:i+config['obs_mean_length']].mean(axis=0) )
+    mean_res = np.array(mean_res) # shape: obs time after mean_length, Nobs
+    # add noise
+    variance = mean_res.var(axis=0) # get variance for each obs
+    R = variance * (config['obs_noise'] ** 2)
+    noise = np.random.randn(mean_res.shape[0],mean_res.shape[1]) * np.sqrt(R) # noise for each obs
+    for idx, type in enumerate(types):
+        type['error_var'] = R[idx]
+    if bool(config['add_noise']): # add noise to obs
+        mean_res = mean_res + noise
+    # mean_res = mean_res + noise
+    config['logger'].info("noise shape:" + str(noise.shape))
+    config['logger'].info("R:" + str(R))
+    config['logger'].info("OBS Data Shape:" + str(mean_res.shape))
+    return mean_res
+
+
+
 def get_obs(types,config):
     # get the observation
     obs_path = config['obs_path']
@@ -329,10 +511,12 @@ def dpl_forcast(xa,model,config,mypara):
     # for lead in range(config['obs_mean_length']):
     #     # xa_current
     #     noise = np.load(config['noise_path'].format(lead,mon)) # mon: 
+    # noise_dc = load_noise2(config)
+    # noises = noise_dc.load(month=mon,max_lead=config['obs_mean_length'],number = ens_num) # Nens,obs_mean_length,lev,lat,lon
     noise_dc = load_noise(config)
     noises = noise_dc.load(mon,config['obs_mean_length'],ens_num)
     config['logger'].info("Noise Shape:" + str(noises.shape))
-    for num in range(loop_pred):
+    for num in range(loop_pred): # loop for prediction because of the memory limit
         xa_current = xa[num*max_num:(num+1)*max_num]
         xa_current = torch.from_numpy(xa_current).float().to(mypara.device)
         out_var = model(
@@ -347,7 +531,13 @@ def dpl_forcast(xa,model,config,mypara):
         else:
             xp = np.concatenate([xp,out_var],axis=0)
         del out_var
+    if np.abs(config['cov_inf'] - 0 ) > 1e-6:
+        xpm = np.mean(xp,axis=0) # mean on ens 
+        xpa = xp - xpm # anomaly
+        xpa = xpa * config['cov_inf'] # inflate
+        xp = xpm + xpa # add mean
     xp = xp + noises * amp
+    
     # config['logger'].info("Deep Learning Forecast Shape:" + str(xp.shape))
     # adr_model = "model/Geoformer_beforeTrans.pkl"
     # out_var = model(
@@ -498,6 +688,7 @@ def save_xa(xa,config):
     if not os.path.exists(path) :
         os.mkdir(path)
     file_name = path + 'xa_' + config['current_time'].strftime("%Y%m%d%H") + '.nc'
+    file_name_mean = path + 'mxa_' + config['current_time'].strftime("%Y%m%d%H") + '.nc'
     # hf = h5py.File(file_name,'r+')
     da = xr.DataArray(xa.swapaxes(0,1),
                       coords={'time':[config['current_time'] + relativedelta(months=1) * i for i in range(0,mean_time)],
@@ -505,12 +696,19 @@ def save_xa(xa,config):
                               'lev':np.arange(config['level_num']),
                               'lat':config['lat'],
                               'lon':config['lon']})
+    dam = da.mean(dim='ens')
+    Nino34 = da.loc[dict(lat=slice(-5,5),lon=slice(190,240),lev=2)].mean(dim=['lat','lon'])
+    config['Nino34']['xa'].append(Nino34)
     ds = xr.Dataset({'xa':da})
+    dsm = xr.Dataset({'xa':dam})
     ds.attrs['config'] = str(config)
+    dsm.attrs['config'] = str(config)
     ds.to_netcdf(file_name)
+    dsm.to_netcdf(file_name_mean)
 
 
-    config['logger'].info("Saving Data to:" + file_name)
+    config['logger'].info("Saving Xa Data to:" + file_name)
+    config['logger'].info("Saving Xa Mean Data to:" + file_name_mean)
 
 def save_xp(xp,config):
     mean_time = config['obs_mean_length']
@@ -518,6 +716,7 @@ def save_xp(xp,config):
     if not os.path.exists(path) :
         os.mkdir(path)
     file_name = path + 'xp_' + config['current_time'].strftime("%Y%m%d%H") + '.nc'
+    file_name_mean = path + 'mxp_' + config['current_time'].strftime("%Y%m%d%H") + '.nc'
     # hf = h5py.File(file_name,'r+')
     da = xr.DataArray(xp.swapaxes(0,1),
                       coords={'time':[config['current_time'] + relativedelta(months=1) * i for i in range(0,mean_time)],
@@ -526,12 +725,22 @@ def save_xp(xp,config):
                               'lev':np.arange(config['level_num']),
                               'lat':config['lat'],
                               'lon':config['lon']})
+    dam = da.mean(dim='ens')
     ds = xr.Dataset({'xp':da})
+    dsm = xr.Dataset({'xp':dam})
+
+    Nino34 = da.loc[dict(lat=slice(-5,5),lon=slice(190,240),lev=2)].mean(dim=['lat','lon'])
+    config['Nino34']['xp'].append(Nino34)
+
+
     ds.attrs['config'] = str(config)
+    dsm.attrs['config'] = str(config)
 
     ds.to_netcdf(file_name)
+    dsm.to_netcdf(file_name_mean)
 
     config['logger'].info(config['current_time'].strftime("%Y%m%d%H") + "Saving Xp Data to:" + file_name)
+    config['logger'].info(config['current_time'].strftime("%Y%m%d%H") + "Saving Xp Mean Data to:" + file_name_mean)
 
 
 def save_obs(obs,config):
@@ -559,5 +768,155 @@ def del_xp(config,xp,xa):
     new_xp = xam + alpha * xpa + (1-alpha) * xaa
     return new_xp
 
+
+def ensemble_calib_ratio(xp,real):
+    ave_squ_err = (xp.mean(axis=1) - real) ** 2
+    # sigma = 
+    sigma = np.var(xp,axis=1)
+    ratio = ave_squ_err / sigma
+    mean_ratio = np.mean(ratio,axis=0)
+    return mean_ratio
+
+
+def lite_post(config):
+    """
+    lite post process
+    """
+    # get the observation
+    obs_path = config['obs_path']
+    mypara = config['my_para']
+    path = config['save_path'] + config['job_name'] + '/'
+    # real_data = xr.
+    # data = xr.open_dataset(obs_path)
+    # stdtemp = data["stdtemp"][mypara.lev_range[0] : mypara.lev_range[1]].values
+    # stdtemp = np.nanmean(stdtemp, axis=(1, 2))
+    # stdtaux = data["stdtaux"].values
+    # stdtaux = np.nanmean(stdtaux, axis=(0, 1))
+    # stdtauy = data["stdtauy"].values
+    # stdtauy = np.nanmean(stdtauy, axis=(0, 1))
+    # stds = np.concatenate((stdtaux[None], stdtauy[None], stdtemp), axis=0)
+    # config['obs_std'] = stds
+    data_times = pd.date_range("1980-01-01", "2021-12-31", freq="MS")
+    config['end_time'] = config['start_time'] + relativedelta(months=config['DA_length'])
+    # time_slice = slice(config['start_time'],config['end_time'])
+    # sst = data['temperatureNor'].loc[dict(lev=5)][:,mypara.lev_range[0] : mypara.lev_range[1]]
+    # sst = sst.rename({'n_mon': 'time'})
+    # sst['time'] = data_times
+    # sst = sst.loc[time_slice]
+    # /glade/work/zilumeng/3D_trans/Da/res01/dl_01_covinf1.2/mxa_1980100100.nc
+    real_data = REAL_DATA(config).dataX * config['obs_std'][:,None,None]
+    Nino34_real = config['real_nino34'] 
+    # sst = sst
+    # Nino34_real = sst.loc[dict(lat=slice(-5,5),lon=slice(190,240))].mean(dim=['lat','lon'])  # real Nino34
+    xa_Nino34 = xr.concat(config['Nino34']['xa'],dim='time') * config['obs_std'][2]
+    xp_Nino34 = xr.concat(config['Nino34']['xp'],dim='time') * config['obs_std'][2]
+    xa_Nino34_ds = xr.Dataset({'xa_Nino34':xa_Nino34})
+    xp_Nino34_ds = xr.Dataset({'xp_Nino34':xp_Nino34})
+    xa_Nino34_ds.to_netcdf(path + 'xa_Nino34.nc')
+    xp_Nino34_ds.to_netcdf(path + 'xp_Nino34.nc')
+    stds = config['obs_std']
+    xam_Nino34 = xa_Nino34.mean(dim='ens')
+    xpm_Nino34 = xp_Nino34.mean(dim='ens')
+    ecr_p = ensemble_calib_ratio(xp_Nino34,Nino34_real)
+    ecr_a = ensemble_calib_ratio(xa_Nino34,Nino34_real)
+    xa_Nino34_corr = np.corrcoef(Nino34_real,xam_Nino34)[0,1]
+    xa_Nino34_rmse = np.sqrt(np.mean((Nino34_real - xam_Nino34)**2))
+    xp_Nino34_corr = np.corrcoef(Nino34_real,xpm_Nino34)[0,1]
+    xp_Nino34_rmse = np.sqrt(np.mean((Nino34_real - xpm_Nino34)**2))
+    # ==============================
+    # open the mean file
+    xa_mean = (xr.open_mfdataset(path + 'mxa_*' + '.nc')['xa'].chunk({"time":-1}) * stds[:,None,None] ).to_numpy()
+    xa_sst = xa_mean[:,2]
+    sst_real = real_data[:,2]
+    xa_sst_mean = np.nanmean(xa_sst,axis=(1,2))
+    sst_real_mean = np.nanmean(sst_real,axis=(1,2))
+    sst_mean_corr = np.corrcoef(sst_real_mean,xa_sst_mean)[0,1]
+    sst_mean_rmse = np.sqrt(np.mean((sst_real_mean - xa_sst_mean)**2))
+    sst_sum_rmse = np.sqrt(np.nanmean((sst_real - xa_sst)**2))
+    # sst corr mean
+    corr_sst = field_corr(xa_sst,sst_real)
+    sst_corr_mean = np.nanmean(corr_sst)
+    # ==============================
+    wind_stress = xa_mean[:,:2]
+    ws_real = real_data[:,:2]
+    wind_stress_mean = np.nanmean(wind_stress,axis=(1,2,3))
+    wind_stress_real_mean = np.nanmean(ws_real,axis=(1,2,3))
+    wind_stress_corr = np.corrcoef(wind_stress_mean,wind_stress_real_mean)[0,1]
+    wind_stress_rmse = np.sqrt(np.mean((wind_stress_mean - wind_stress_real_mean)**2))
+    wind_stress_sum_rmse = np.sqrt(np.nanmean((wind_stress - ws_real)**2))
+    corr_ws = field_corr(wind_stress,ws_real)
+    wind_stress_corr_mean = np.nanmean(corr_ws)   
+    # ==============================
+    ocean_temp = xa_mean[:,3:]
+    ot_real = real_data[:,3:]
+    ocean_temp_mean = np.nanmean(ocean_temp,axis=(1,2,3))
+    ocean_temp_real_mean = np.nanmean(ot_real,axis=(1,2,3))
+    ocean_temp_corr = np.corrcoef(ocean_temp_mean,ocean_temp_real_mean)[0,1]
+    ocean_temp_rmse = np.sqrt(np.mean((ocean_temp_mean - ocean_temp_real_mean)**2))
+    ocean_temp_sum_rmse = np.sqrt(np.nanmean((ocean_temp - ot_real)**2))
+    corr_ot = field_corr(ocean_temp,ot_real)
+    ocean_temp_corr_mean = np.nanmean(corr_ot)
+
+
+
+    # ==============================
+
+
+    res =  {'xa_Nino34_corr':xa_Nino34_corr,
+            'xa_Nino34_rmse':xa_Nino34_rmse,
+            'xp_Nino34_corr':xp_Nino34_corr,
+            'xp_Nino34_rmse':xp_Nino34_rmse,
+            'sst_mean_corr':sst_mean_corr,
+            'sst_mean_rmse':sst_mean_rmse,
+            'sst_corr_mean':sst_corr_mean,
+            'sst_sum_rmse':sst_sum_rmse,
+            'wind_stress_corr':wind_stress_corr,
+            'wind_stress_rmse':wind_stress_rmse,
+            'wind_stress_sum_rmse':wind_stress_sum_rmse,
+            'wind_stress_corr_mean':wind_stress_corr_mean,
+            'ocean_temp_corr':ocean_temp_corr,
+            'ocean_temp_rmse':ocean_temp_rmse,
+            'ocean_temp_sum_rmse':ocean_temp_sum_rmse,
+            'ocean_temp_corr_mean':ocean_temp_corr_mean,
+            'ecr_p':ecr_p,
+            'ecr_a':ecr_a}
+    # list(res.values())
+    for key in list(res.keys()):
+        res[key] = float(res[key])
+    return res
+        
+
+def save_lite_post(config,res):
+    path = config['save_path'] + config['job_name'] + '/' + 'alite_post.txt'
+    with open(path,'w') as f:
+        f.write(str(res))
+    config['logger'].info("Saving Lite Post Process to:" + path)
+
+    # sstm 
+    
+
+
+
+if __name__ == "__main__":
+    # config = {'noise_path':"/glade/work/zilumeng/3D_trans/data/noise1/eof/m0_3x4p_1_leadmonth%s.pkl"}
+    # config['seed'] = 0
+    # noise_load = load_noise2(config)
+    # noise = noise_load.load(pc_num=100,lead_month=1,number=10)
+    # print(noise.shape)
+    import yaml
+    yml_path = "/glade/work/zilumeng/3D_trans/Da/cfg_new.yml"
+    with open(yml_path, 'r') as stream:
+        config = yaml.safe_load(stream)
+    sys.path.append(config['model_config'])
+    tmp = config['start_time']
+
+    from myconfig1 import mypara
+    config['my_para'] = mypara
+    config['start_time'] = dt.datetime(int(tmp[:4]),int(tmp[4:6]),int(tmp[6:8]),int(tmp[8:10]))
+    config['current_time'] = dt.datetime(int(tmp[:4]),int(tmp[4:6]),int(tmp[6:8]),int(tmp[8:10]))
+
+    config['Nino34'] = {'xa':[],'xp':[]}
+    res = lite_post(config)
+    print(res)
 
 

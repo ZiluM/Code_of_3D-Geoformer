@@ -1,5 +1,5 @@
 #!/bin/bash -l
-#PBS -N lim_p6_0.1
+#PBS -N DL_3_0.7
 #PBS -A UWAS0131 
 #PBS -l select=1:ncpus=1:mpiprocs=1:ngpus=0:mem=40GB
 #PBS -l walltime=01:30:00
@@ -24,4 +24,4 @@ conda activate earth2mip
 
 cd /glade/work/zilumeng/3D_trans
 
-python /glade/work/zilumeng/3D_trans/Da/post/post.py /glade/work/zilumeng/3D_trans/Da/res_end/lim_06_0.1/config_moreobs_mean6_0.1.yml
+python /glade/work/zilumeng/3D_trans/Da/post/post.py /glade/work/zilumeng/3D_trans/Da/cfg_new3.yml

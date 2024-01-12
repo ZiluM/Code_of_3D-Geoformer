@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import sys,os
 import yaml
 import putils
+import datetime as dt
+import pickle as pkl
 
 
 yml_path = sys.argv[1]
@@ -11,8 +13,19 @@ logger = putils.get_logger()
 with open(yml_path, 'r') as stream:
     config = yaml.safe_load(stream)
 config['logger'] = logger
-
+tmp = config['start_time']
+config['start_time'] = dt.datetime(int(tmp[:4]),int(tmp[4:6]),int(tmp[6:8]),int(tmp[8:10]))
 config['plot_data'] = {}
+
+# logger.info('')
+with open(config['obs_locs'],'rb') as f:
+    obs_data = pkl.load(f)
+obs_locs = [[float(data.lon.values) for data in obs_data],
+            [float(data.lat.values) for data in obs_data]]
+obs_locs = np.array(obs_locs).T
+config['obs_locs'] = obs_locs
+config['Nobs'] = len(obs_data)
+logger.info('obs_locs : ' + str(obs_locs))
 
 
 sys.path.append(config['model_config'])

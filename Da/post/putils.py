@@ -9,6 +9,7 @@ from utils import make_dataset_ens
 import cartopy.crs as ccrs
 import sacpy.Map
 from cartopy.mpl.ticker import LongitudeFormatter, LatitudeFormatter
+import pickle as pkl
 
 
 
@@ -45,9 +46,11 @@ def Nino34_plot(Nino34s,config):
         ax.plot(tm,Nino34.mean(dim='ens'),color=colors1[i],linewidth=1.3,label=titles[i]+'_mean',zorder= 10)
         # ax.set_title('Nino34_' + titles[i])
     ax.plot(tm,config['real_nino34'],color='black',linewidth=1.3,label='real',zorder= 10)
+    corr_xa = np.corrcoef(Nino34s[1].mean(dim='ens').compute(),config['real_nino34'])[0,1]
+    corr_xp = np.corrcoef(Nino34s[0].mean(dim='ens').compute(),config['real_nino34'])[0,1]
     save_path = config['post_path'] + 'Nino34.png'
     ax.legend()
-    ax.set_title('Nino34')
+    ax.set_title('Nino34, xa_corr: {:.2f}, xp_corr: {:.2f}'.format(corr_xa,corr_xp))
     fig.savefig(save_path,dpi=300)
     fig.show()
     config['plot_data']['Xa_Nino34'] = Nino34s
@@ -55,13 +58,13 @@ def Nino34_plot(Nino34s,config):
 
 class REAL_DATA:
     def __init__(self,config):
-        obs_path = config['obs_path']
+        # obs_path = config['obs_path']
         mypara = config['my_para']
         needtauxy = mypara.needtauxy
         lon_range = mypara.lon_range
         lat_range = mypara.lat_range
         lev_range = mypara.lev_range
-        address = config['obs_path']
+        address = config['true_path']
         data_in = xr.open_dataset(address)
         self.lev = data_in["lev"].values
         self.lat = data_in["lat"].values
@@ -100,7 +103,10 @@ class REAL_DATA:
             del temp, taux, tauy
         else:
             self.dataX = temp
-        self.dataX = self.dataX[:config['DA_length']]
+        start_time = config['start_time']
+        times = pd.date_range("1980-01-01", "2021-12-31", freq="MS")
+        start_index = np.abs(times - start_time).argmin()
+        self.dataX = self.dataX[start_index:config['DA_length']+start_index]
         # data = sd.load()
         data = data_in
         stdtemp = data["stdtemp"][mypara.lev_range[0] : mypara.lev_range[1]].values
@@ -133,6 +139,7 @@ def Obs_plot(config,xa,xp):
     obs_path = config['save_path'] + config['job_name'] + '/' + 'obs' +  '.npy'
     obs = np.load(obs_path) * config['obs_std'][2]
     obs_locs = config['obs_locs']
+    # config['obs_locs'] = obs_locs
     lons = xa['lon'].values
     lats = xa['lat'].values
     for i in range(config['Nobs']):
@@ -166,6 +173,7 @@ def cal_var(xa,xp,config):
     xp_var = xp.var(dim='ens').compute()
     xp_var_time = xp_var.mean(['lon', 'lat','lev']).compute()
     xa_var_time = xa_var.mean(['lon', 'lat','lev']).compute()
+    fig = plt.figure(figsize=(7,4))
     ax = plt.subplot(1,1,1)
     ax.plot(xa_var_time['time'],xa_var_time,label='xa_var')
     ax.plot(xp_var_time['time'],xp_var_time,label='xp_var')
